@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../components/ui/ThemeContext';
 import { Calendar, ChevronLeft, ChevronRight, Check, Filter } from 'lucide-react';
 
 const BookingCalendar = () => {
   const { themeStyles } = useTheme();
+  const navigate = useNavigate();
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
   const [activeFilter, setActiveFilter] = useState('all');
@@ -76,6 +78,11 @@ const BookingCalendar = () => {
     setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1));
   };
 
+    // Navigation handler for New Booking button
+    const handleNewBookingClick = () => {
+      navigate('/new-booking');
+    };
+
   return (
     <div className={`min-h-screen ${themeStyles.background}`}>
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -90,7 +97,10 @@ const BookingCalendar = () => {
               <Filter size={16} className="mr-1" />
               <span>Filters</span>
             </button>
-            <button className="px-3 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 flex items-center">
+            <button 
+              onClick={handleNewBookingClick}
+              className="px-3 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 flex items-center"
+            >
               <Calendar size={16} className="mr-1" />
               <span>New Booking</span>
             </button>

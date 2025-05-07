@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../components/ui/ThemeContext';
 import { Calendar, ChevronLeft, ChevronRight, Search, Filter, Plus, User, Home, CheckCircle, XCircle } from 'lucide-react';
 
 const BookingsPage = () => {
   const { themeStyles } = useTheme();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('current');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProperty, setSelectedProperty] = useState('all');
@@ -150,6 +152,15 @@ const BookingsPage = () => {
   // Check if a booking is for today
   const isToday = (dateString) => dateString === today;
 
+// Add these handler functions
+const handleCalendarViewClick = () => {
+  navigate('/booking-calendar');
+};
+
+const handleNewBookingClick = () => {
+  navigate('/new-booking');
+};
+
   return (
     <div className={`min-h-screen ${themeStyles.background}`}>
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -160,12 +171,28 @@ const BookingsPage = () => {
             <p className="text-gray-600 dark:text-gray-300 mt-1">Manage your guest bookings</p>
           </div>
           
-          <div className="flex mt-4 sm:mt-0 space-x-2">
+          {/* <div className="flex mt-4 sm:mt-0 space-x-2">
             <button className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 flex items-center">
               <Calendar size={16} className="mr-1" />
               <span>Calendar View</span>
             </button>
             <button className="px-3 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 flex items-center">
+              <Plus size={16} className="mr-1" />
+              <span>New Booking</span>
+            </button>
+          </div> */}
+          <div className="flex mt-4 sm:mt-0 space-x-2">
+            <button 
+              onClick={() => navigate('/booking-calendar')}
+              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 flex items-center"
+            >
+              <Calendar size={16} className="mr-1" />
+              <span>Calendar View</span>
+            </button>
+            <button 
+              onClick={() => navigate('/new-booking')}
+              className="px-3 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 flex items-center"
+            >
               <Plus size={16} className="mr-1" />
               <span>New Booking</span>
             </button>

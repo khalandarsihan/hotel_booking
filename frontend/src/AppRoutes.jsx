@@ -5,12 +5,14 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AppWrapper from './components/AppWrapper';
 import Dashboard from './pages/Dashboard';
+import BookingsPage from './pages/BookingsPage';
 import RoomManagement from './pages/RoomManagement';
 import BookingCalendar from './pages/BookingCalendar';
+// import NewBooking from './pages/NewBooking';
+// import EditBooking from './pages/EditBooking';  
 import PropertiesPage from './pages/PropertiesPage';
 import PropertyDetails from './pages/PropertyDetails';
-import BookingsPage from './pages/BookingsPage';
-import BookingDetail from './pages/BookingDetail';
+import BookingDetail from './pages/BookingDetails';
 import BookingForm from './pages/BookingForm';
 import PageNotFound from './pages/PageNotFound';
 

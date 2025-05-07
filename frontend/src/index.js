@@ -135,7 +135,7 @@ import BookingsPage from "./pages/BookingsPage";
 import PropertyDetails from "./pages/PropertyDetails";
 import PropertiesPage from "./pages/PropertiesPage";
 import BookingCalendar from "./pages/BookingCalendar";
-import BookingDetail from "./pages/BookingDetail";
+import BookingDetails from "./pages/BookingDetails";
 import BookingForm from "./pages/BookingForm";
 import { ThemeProvider } from "./components/ui/ThemeContext";
 import "./styles/base.css";
@@ -186,7 +186,7 @@ if (container) {
 			propertyId: window.propertyId,
 		}),
 		mountComponentIfElementExists("booking-calendar-root", BookingCalendar),
-		mountComponentIfElementExists("booking-details-root", BookingDetail, {
+		mountComponentIfElementExists("booking-details-root", BookingDetails, {
 			bookingId: window.bookingId,
 		}),
 		mountComponentIfElementExists("new-booking-root", BookingForm),

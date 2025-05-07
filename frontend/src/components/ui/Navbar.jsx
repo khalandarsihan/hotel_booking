@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from './ThemeContext';
 import { Menu, X, Sun, Moon, User, LogOut } from 'lucide-react';
 
 const Navbar = () => {
   const { useLightTheme, toggleTheme, themeStyles } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  // Function to check if a path is active
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <nav className="bg-white dark:bg-gray-800 shadow-sm">
@@ -13,37 +20,49 @@ const Navbar = () => {
           {/* Logo and main navigation */}
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <a href="/" className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <span className="text-blue-600 dark:text-blue-400 font-semibold text-xl">HotelBooking</span>
-              </a>
+              </Link>
             </div>
             
             {/* Desktop Navigation */}
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <a 
-                href="/" 
-                className="border-blue-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              <Link
+                to="/"
+                className={`${isActive('/') || isActive('/dashboard') 
+                  ? 'border-blue-500 text-gray-900 dark:text-white' 
+                  : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
+                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
                 Dashboard
-              </a>
-              <a 
-                href="/bookings" 
-                className="border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              </Link>
+              <Link
+                to="/bookings"
+                className={`${isActive('/bookings') 
+                  ? 'border-blue-500 text-gray-900 dark:text-white' 
+                  : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
+                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
                 Bookings
-              </a>
-              <a 
-                href="/rooms" 
-                className="border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              </Link>
+              <Link
+                to="/rooms"
+                className={`${isActive('/rooms') 
+                  ? 'border-blue-500 text-gray-900 dark:text-white' 
+                  : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
+                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
                 Rooms
-              </a>
-              <a 
-                href="/properties" 
-                className="border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              </Link>
+              <Link
+                to="/properties"
+                className={`${isActive('/properties') 
+                  ? 'border-blue-500 text-gray-900 dark:text-white' 
+                  : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
+                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
                 Properties
-              </a>
+              </Link>
             </div>
           </div>
           
@@ -84,30 +103,42 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="sm:hidden">
           <div className="pt-2 pb-3 space-y-1">
-            <a
-              href="/"
-              className="bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            <Link
+              to="/"
+              className={`${isActive('/') || isActive('/dashboard') 
+                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+              } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
             >
               Dashboard
-            </a>
-            <a
-              href="/bookings"
-              className="border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            </Link>
+            <Link
+              to="/bookings"
+              className={`${isActive('/bookings') 
+                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+              } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
             >
               Bookings
-            </a>
-            <a
-              href="/rooms"
-              className="border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            </Link>
+            <Link
+              to="/rooms"
+              className={`${isActive('/rooms') 
+                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+              } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
             >
               Rooms
-            </a>
-            <a
-              href="/properties"
-              className="border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            </Link>
+            <Link
+              to="/properties"
+              className={`${isActive('/properties') 
+                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+              } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
             >
               Properties
-            </a>
+            </Link>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
             <div className="flex items-center px-4">
@@ -128,24 +159,24 @@ const Navbar = () => {
               </button>
             </div>
             <div className="mt-3 space-y-1">
-              <a
-                href="/profile"
+              <Link
+                to="/profile"
                 className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 Your Profile
-              </a>
-              <a
-                href="/settings"
+              </Link>
+              <Link
+                to="/settings"
                 className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 Settings
-              </a>
-              <a
-                href="/logout"
+              </Link>
+              <Link
+                to="/logout"
                 className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 Sign out
-              </a>
+              </Link>
             </div>
           </div>
         </div>
