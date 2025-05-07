@@ -1,20 +1,23 @@
 {% extends "templates/layout.html" %} {% block title %}Booking Details - Hotel Booking Management
 System{% endblock %} {% block content %}
+<!-- This div will be a target for React's component-specific rendering -->
 <div id="booking-details-root"></div>
 {% endblock %} {% block script %}
 <script>
 	window.socketPort = "{{ socketio_port }}";
+	window.currentPage = "booking-details";
+
 	// Get booking ID from URL parameters
 	const urlParams = new URLSearchParams(window.location.search);
 	const bookingId = urlParams.get("id");
 
 	if (bookingId) {
-		// Initialize the booking details component with the booking ID
+		// Make the booking ID available to React components
 		window.bookingId = bookingId;
 	} else {
-		// Display error message
+		// Add a placeholder message that will be replaced when React loads
 		document.getElementById("booking-details-root").innerHTML =
-			'<div class="text-red-500 p-4">Error: No booking ID provided</div>';
+			'<div class="text-red-500 p-4">Error: No booking ID provided. Please include an ID in the URL.</div>';
 	}
 </script>
 {% endblock %}

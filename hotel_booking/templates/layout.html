@@ -12,13 +12,10 @@
 		<link rel="icon" href="/assets/hotel_booking/images/favicon.ico" type="image/x-icon" />
 
 		<!-- Frappe CSS -->
-		<link rel="stylesheet" href="/assets/hotel_booking/css/frappe-style.css" />
+		<link rel="stylesheet" href="/assets/frappe/css/frappe-web.min.css" />
 
 		<!-- React CSS -->
 		<link rel="stylesheet" href="/assets/hotel_booking/css/react-style.css" />
-
-		<!-- Custom CSS -->
-		<link rel="stylesheet" href="/assets/hotel_booking/css/style.css" />
 
 		<!-- Fonts -->
 		<link
@@ -37,15 +34,81 @@
 		{% block head_include %}{% endblock %} {% block style %}{% endblock %}
 	</head>
 	<body data-path="{{ path or '' }}">
+		<!-- Main React App Container -->
 		<div id="hotel-booking-root">
-			{% block content %}
-			<!-- React app will render here -->
-			{% endblock %}
+			<!-- This is where the React app will render -->
+			<!-- If React doesn't load properly, show a message -->
+			<div
+				id="loading-placeholder"
+				style="
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 100vh;
+					color: #888;
+					flex-direction: column;
+				"
+			>
+				<div style="margin-bottom: 20px">
+					<svg
+						width="40"
+						height="40"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+						<polyline points="9 22 9 12 15 12 15 22"></polyline>
+					</svg>
+				</div>
+				<p>Loading Hotel Booking System...</p>
+				<p style="font-size: 0.8rem; margin-top: 10px">
+					If this message persists, please check console for errors.
+				</p>
+			</div>
 		</div>
 
-		<!-- React JS -->
-		<script type="text/javascript" src="/assets/hotel_booking/js/react/bundle.js"></script>
+		<!-- Page-specific containers (used in individual page templates) -->
+		{% block content %}{% endblock %}
 
+		<!-- Common Variables for React -->
+		<script>
+			// Setup common variables for React
+			window.socketPort = "{{ socketio_port or '9000' }}";
+			window.frappe = window.frappe || {};
+			window.frappe.csrf_token = "{{ frappe.session.csrf_token }}";
+			window.currentPath = "{{ path or '' }}";
+
+			// Remove loading placeholder when React loads
+			window.addEventListener("DOMContentLoaded", function () {
+				setTimeout(function () {
+					var loadingPlaceholder = document.getElementById("loading-placeholder");
+					if (loadingPlaceholder && loadingPlaceholder.parentNode) {
+						loadingPlaceholder.parentNode.removeChild(loadingPlaceholder);
+					}
+				}, 1000); // Timeout to ensure React has mounted
+			});
+		</script>
+
+		<!-- React Bundle JS (deferred loading for performance) -->
+		<script
+			defer
+			type="text/javascript"
+			src="/assets/hotel_booking/js/react/bundle.js"
+		></script>
+
+		<!-- Page-specific scripts -->
 		{% block script %}{% endblock %}
+
+		<!-- Error Handler -->
+		<script>
+			window.addEventListener("error", function (e) {
+				console.error("Application Error:", e.error);
+				// You could add error reporting here
+			});
+		</script>
 	</body>
 </html>

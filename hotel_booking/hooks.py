@@ -238,29 +238,39 @@ app_license = "mit"
 # }
 
 # application home page (will override Website Settings)
-# home_page = "dashboard"
+home_page = "dashboard"
 
 # Routes
 website_route_rules = [
-    # Dashboard
+    # Main routes without trailing slash
     {"from_route": "/dashboard", "to_route": "hotel_booking/www/dashboard.html"},
-    
-    # Properties
     {"from_route": "/properties", "to_route": "hotel_booking/www/properties.html"},
-    {"from_route": "/property-details", "to_route": "hotel_booking/www/property-details.html"},
-    
-    # Rooms
     {"from_route": "/rooms", "to_route": "hotel_booking/www/rooms.html"},
-    
-    # Bookings
     {"from_route": "/bookings", "to_route": "hotel_booking/www/bookings.html"},
-    {"from_route": "/booking-details", "to_route": "hotel_booking/www/booking-details.html"},
     {"from_route": "/booking-calendar", "to_route": "hotel_booking/www/booking-calendar.html"},
+    {"from_route": "/booking-details", "to_route": "hotel_booking/www/booking-details.html"},
     {"from_route": "/new-booking", "to_route": "hotel_booking/www/new-booking.html"},
     {"from_route": "/edit-booking", "to_route": "hotel_booking/www/edit-booking.html"},
+    {"from_route": "/property-details", "to_route": "hotel_booking/www/property-details.html"},
+    
+    # Root redirect
+    {"from_route": "/", "to_route": "hotel_booking/www/dashboard.html"},
+    
+    # Also add routes with trailing slash to handle both formats
+    {"from_route": "/dashboard/", "to_route": "hotel_booking/www/dashboard.html"},
+    {"from_route": "/properties/", "to_route": "hotel_booking/www/properties.html"},
+    {"from_route": "/rooms/", "to_route": "hotel_booking/www/rooms.html"},
+    {"from_route": "/bookings/", "to_route": "hotel_booking/www/bookings.html"},
+    {"from_route": "/booking-calendar/", "to_route": "hotel_booking/www/booking-calendar.html"},
+    {"from_route": "/booking-details/", "to_route": "hotel_booking/www/booking-details.html"},
+    {"from_route": "/new-booking/", "to_route": "hotel_booking/www/new-booking.html"},
+    {"from_route": "/edit-booking/", "to_route": "hotel_booking/www/edit-booking.html"},
+    {"from_route": "/property-details/", "to_route": "hotel_booking/www/property-details.html"},
 ]
-
 # Include your React app's CSS and JS in the header of web templates
 
 web_include_css = "/assets/hotel_booking/css/react-style.css"
 web_include_js = "/assets/hotel_booking/js/react/bundle.js"
+
+# Add this to hooks.py
+page_404 = "hotel_booking/www/404.html"

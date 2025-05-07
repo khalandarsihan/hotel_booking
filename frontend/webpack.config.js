@@ -28,23 +28,31 @@ module.exports = {
 			"@": path.resolve(__dirname, "src"),
 		},
 	},
-	// Development mode for better debugging
-	mode: "development",
-	devtool: "source-map",
-	// Add performance hints
+	// Set mode explicitly based on environment variable
+	mode: process.env.NODE_ENV === "production" ? "production" : "development",
+	// Enable source maps for development
+	devtool: process.env.NODE_ENV === "production" ? false : "source-map",
+	// Performance optimization
 	performance: {
-		hints: "warning",
+		hints: process.env.NODE_ENV === "production" ? "warning" : false,
 		maxEntrypointSize: 512000,
 		maxAssetSize: 512000,
 	},
-	// Add optimization for development
+	// Add optimization for development and production
 	optimization: {
 		moduleIds: "named",
-		removeAvailableModules: false,
-		removeEmptyChunks: false,
-		splitChunks: false,
+		// Enable tree shaking in production
+		usedExports: process.env.NODE_ENV === "production",
+		// Split chunks in production
+		splitChunks:
+			process.env.NODE_ENV === "production"
+				? {
+						chunks: "all",
+						name: false,
+				  }
+				: false,
 	},
-	// Add environment-specific configuration
+	// Console output configuration
 	stats: {
 		colors: true,
 		modules: false,

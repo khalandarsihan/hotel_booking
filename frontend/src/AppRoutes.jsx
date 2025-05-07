@@ -12,12 +12,16 @@ import BookingForm from './pages/BookingForm';
 import PageNotFound from './pages/PageNotFound';
 
 const AppRoutes = () => {
+  // Get the current path from window.location
+  const currentPath = window.location.pathname;
+
   return (
     <BrowserRouter>
       <AppWrapper>
         <Routes>
-          {/* Dashboard */}
-          <Route path="/" element={<Dashboard />} />
+          {/* Dashboard Routes */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
           
           {/* Property Routes */}
           <Route path="/properties" element={<PropertiesPage />} />
@@ -35,7 +39,6 @@ const AppRoutes = () => {
           <Route path="/edit-booking" element={<BookingForm isEdit={true} />} />
           
           {/* Redirect and 404 */}
-          <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </AppWrapper>

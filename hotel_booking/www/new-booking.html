@@ -1,9 +1,11 @@
 {% extends "templates/layout.html" %} {% block title %}New Booking - Hotel Booking Management
 System{% endblock %} {% block content %}
+<!-- This div will be a target for React's component-specific rendering -->
 <div id="new-booking-root"></div>
 {% endblock %} {% block script %}
 <script>
 	window.socketPort = "{{ socketio_port }}";
+	window.currentPage = "new-booking";
 	window.isEditMode = false;
 </script>
 {% endblock %}
