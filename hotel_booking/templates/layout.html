@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 	<head>
 		<meta charset="UTF-8" />
 		<meta
@@ -81,24 +81,10 @@
 			window.frappe = window.frappe || {};
 			window.frappe.csrf_token = "{{ frappe.session.csrf_token }}";
 			window.currentPath = "{{ path or '' }}";
-
-			// Remove loading placeholder when React loads
-			window.addEventListener("DOMContentLoaded", function () {
-				setTimeout(function () {
-					var loadingPlaceholder = document.getElementById("loading-placeholder");
-					if (loadingPlaceholder && loadingPlaceholder.parentNode) {
-						loadingPlaceholder.parentNode.removeChild(loadingPlaceholder);
-					}
-				}, 1000); // Timeout to ensure React has mounted
-			});
 		</script>
 
-		<!-- React Bundle JS (deferred loading for performance) -->
-		<script
-			defer
-			type="text/javascript"
-			src="/assets/hotel_booking/js/react/bundle.js"
-		></script>
+		<!-- React Bundle JS -->
+		<script type="text/javascript" src="/assets/hotel_booking/js/react/bundle.js"></script>
 
 		<!-- Page-specific scripts -->
 		{% block script %}{% endblock %}
@@ -107,7 +93,7 @@
 		<script>
 			window.addEventListener("error", function (e) {
 				console.error("Application Error:", e.error);
-				// You could add error reporting here
+				// Add error handling
 			});
 		</script>
 	</body>

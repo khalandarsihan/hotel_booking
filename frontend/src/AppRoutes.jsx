@@ -1,3 +1,6 @@
+// frontend/src/AppRoutes.jsx
+// Updated routes file to fix 404 issues
+
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AppWrapper from './components/AppWrapper';
@@ -14,9 +17,14 @@ import PageNotFound from './pages/PageNotFound';
 const AppRoutes = () => {
   // Get the current path from window.location
   const currentPath = window.location.pathname;
+  
+  // Check for trailing slash and remove it for consistency
+  const normalizedPath = currentPath.endsWith('/') && currentPath !== '/' 
+    ? currentPath.slice(0, -1) 
+    : currentPath;
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="">
       <AppWrapper>
         <Routes>
           {/* Dashboard Routes */}

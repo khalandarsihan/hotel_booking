@@ -7,8 +7,16 @@ const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   // Initialize theme from localStorage or default to light theme
   const [useLightTheme, setUseLightTheme] = useState(() => {
+    // Try to get saved preference from localStorage
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? savedTheme === 'light' : true;
+    // Check if user prefers dark mode
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme) {
+      return savedTheme === 'light';
+    } else {
+      return !prefersDarkMode;
+    }
   });
 
   // Theme-based styles
@@ -68,6 +76,7 @@ export const ThemeProvider = ({ children }) => {
   // Save theme preference to localStorage when it changes
   useEffect(() => {
     localStorage.setItem('theme', useLightTheme ? 'light' : 'dark');
+    
     // Update document class for global theme
     if (useLightTheme) {
       document.documentElement.classList.remove('dark');
@@ -75,6 +84,13 @@ export const ThemeProvider = ({ children }) => {
       document.documentElement.classList.add('dark');
     }
   }, [useLightTheme]);
+
+  // Apply theme class on mount
+  useEffect(() => {
+    if (!useLightTheme) {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
 
   // Provider value
   const value = {
