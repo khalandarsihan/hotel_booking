@@ -1,0 +1,8 @@
+{% extends "templates/layout.html" %} {% block title %}Dashboard - Hotel Booking Management
+System{% endblock %} {% block content %}
+<div id="dashboard-root"></div>
+{% endblock %} {% block script %}
+<script>
+	window.socketPort = "{{ socketio_port }}";
+</script>
+{% endblock %}

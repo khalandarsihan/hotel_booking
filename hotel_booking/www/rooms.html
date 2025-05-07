@@ -1,0 +1,8 @@
+{% extends "templates/layout.html" %} {% block title %}Room Management - Hotel Booking Management
+System{% endblock %} {% block content %}
+<div id="room-management-root"></div>
+{% endblock %} {% block script %}
+<script>
+	window.socketPort = "{{ socketio_port }}";
+</script>
+{% endblock %}

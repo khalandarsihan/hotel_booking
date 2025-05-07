@@ -1,0 +1,22 @@
+{% extends "templates/layout.html" %} {% block title %}Edit Booking - Hotel Booking Management
+System{% endblock %} {% block content %}
+<div id="edit-booking-root"></div>
+{% endblock %} {% block script %}
+<script>
+	window.socketPort = "{{ socketio_port }}";
+	window.isEditMode = true;
+
+	// Get booking ID from URL parameters
+	const urlParams = new URLSearchParams(window.location.search);
+	const bookingId = urlParams.get("id");
+
+	if (bookingId) {
+		// Initialize the booking form component with the booking ID
+		window.bookingId = bookingId;
+	} else {
+		// Display error message
+		document.getElementById("edit-booking-root").innerHTML =
+			'<div class="text-red-500 p-4">Error: No booking ID provided</div>';
+	}
+</script>
+{% endblock %}

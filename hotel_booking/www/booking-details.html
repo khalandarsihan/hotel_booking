@@ -1,0 +1,20 @@
+{% extends "templates/layout.html" %} {% block title %}Booking Details - Hotel Booking Management
+System{% endblock %} {% block content %}
+<div id="booking-details-root"></div>
+{% endblock %} {% block script %}
+<script>
+	window.socketPort = "{{ socketio_port }}";
+	// Get booking ID from URL parameters
+	const urlParams = new URLSearchParams(window.location.search);
+	const bookingId = urlParams.get("id");
+
+	if (bookingId) {
+		// Initialize the booking details component with the booking ID
+		window.bookingId = bookingId;
+	} else {
+		// Display error message
+		document.getElementById("booking-details-root").innerHTML =
+			'<div class="text-red-500 p-4">Error: No booking ID provided</div>';
+	}
+</script>
+{% endblock %}

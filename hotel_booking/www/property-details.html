@@ -1,0 +1,20 @@
+{% extends "templates/layout.html" %} {% block title %}Property Details - Hotel Booking Management
+System{% endblock %} {% block content %}
+<div id="property-details-root"></div>
+{% endblock %} {% block script %}
+<script>
+	window.socketPort = "{{ socketio_port }}";
+	// Get property ID from URL parameters
+	const urlParams = new URLSearchParams(window.location.search);
+	const propertyId = urlParams.get("id");
+
+	if (propertyId) {
+		// Initialize the property details component with the property ID
+		window.propertyId = propertyId;
+	} else {
+		// Display error message
+		document.getElementById("property-details-root").innerHTML =
+			'<div class="text-red-500 p-4">Error: No property ID provided</div>';
+	}
+</script>
+{% endblock %}
