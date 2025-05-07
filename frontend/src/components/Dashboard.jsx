@@ -1,7 +1,8 @@
+// frontend/src/components/Dashboard.jsx
 import React, { useState } from 'react';  
-import { LineChart, BarChart, PieChart, Pie, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';  
-import { CalendarDays, Building, Users, Bed, Home, Clock, Calendar, TrendingUp, AlertCircle, CheckCircle, Percent } from 'lucide-react';
-import { useTheme } from '../components/ui/ThemeContext';
+import { CalendarDays, Building, Users, Bed, Home } from 'lucide-react';
+import { useTheme } from './ui/ThemeContext';
+import { OverviewTab, LeaseManagementTab, OccupancyAnalysisTab, AlertsAndNotificationsTab } from './dashboard/TabContent';
 
 // Dashboard Component  
 const Dashboard = () => {  
@@ -83,37 +84,9 @@ const Dashboard = () => {
   const directOccupancyRate = Math.round((mockData.directlyManaged - mockData.availableRooms) / mockData.directlyManaged * 100);  
   const subLeaseOccupancyRate = 94; // Assumed fixed percentage
 
-  // Utility functions  
-  function getRandomOccupancyColor() {  
-    const colors = [  
-      'bg-green-500', // 90-100%  
-      'bg-green-300', // 70-89%  
-      'bg-yellow-300', // 50-69%  
-      'bg-red-300', // <50%  
-    ];  
-      
-    // Weighted randomization to favor higher occupancy  
-    const weights = [0.4, 0.3, 0.2, 0.1];  
-    const random = Math.random();  
-      
-    if (random < weights[0]) return colors[0];  
-    if (random < weights[0] + weights[1]) return colors[1];  
-    if (random < weights[0] + weights[1] + weights[2]) return colors[2];  
-    return colors[3];  
-  }
-
-  function getSeasonColorClass(season) {  
-    switch(season) {  
-      case 'Hajj':  
-        return 'bg-amber-100 border border-amber-200';  
-      case 'Ramadan':  
-        return 'bg-green-100 border border-green-200';  
-      case 'Umrah (Regular)':  
-        return 'bg-blue-100 border border-blue-200';  
-      default:  
-        return 'bg-gray-100 border border-gray-200';  
-    }  
-  }
+  // Get current date
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     
   return (  
     <div className={`min-h-screen ${themeStyles.background}`}>  
@@ -127,7 +100,7 @@ const Dashboard = () => {
           <div className="flex items-center gap-4">  
             <div className="bg-emerald-100 dark:bg-emerald-900/30 px-3 py-1 rounded-full text-emerald-700 dark:text-emerald-300 text-sm font-medium flex items-center">  
               <CalendarDays className="w-4 h-4 mr-1" />  
-              May 4, 2025  
+              {formattedDate}
             </div>  
             <div className="flex items-center gap-2 text-sm">  
               <span className="font-medium text-gray-700 dark:text-gray-300">Hajj Season:</span>  
@@ -240,65 +213,11 @@ const Dashboard = () => {
           </div>  
         </div>  
           
-        {/* Tab Content - This is a simplified version for now */}  
-        {activeTab === 'overview' && (  
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">  
-            {/* Monthly Booking Trends */}  
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow col-span-2">  
-              <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Monthly Occupancy Trends</h2>  
-              <ResponsiveContainer width="100%" height={300}>  
-                <LineChart data={mockData.monthlyOccupancy}>  
-                  <CartesianGrid strokeDasharray="3 3" />  
-                  <XAxis dataKey="month" />  
-                  <YAxis />  
-                  <Tooltip />  
-                  <Legend />  
-                  <Line type="monotone" dataKey="directRate" stroke="#3b82f6" name="Direct Management" />  
-                  <Line type="monotone" dataKey="subLeaseRate" stroke="#8b5cf6" name="Sub-Leased" />  
-                </LineChart>  
-              </ResponsiveContainer>  
-            </div>  
-              
-            {/* Room Status */}  
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">  
-              <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Property Distribution</h2>  
-              <ResponsiveContainer width="100%" height={300}>  
-                <PieChart>  
-                  <Pie  
-                    data={[  
-                      { name: 'Sub-Leased', value: mockData.subLeasedRooms, fill: '#8b5cf6' },  
-                      { name: 'Direct-Managed', value: mockData.directlyManaged, fill: '#3b82f6' },  
-                    ]}  
-                    cx="50%"  
-                    cy="50%"  
-                    outerRadius={80}  
-                    innerRadius={60}  
-                    labelLine={false}  
-                    label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}  
-                  />  
-                  <Tooltip />  
-                </PieChart>  
-              </ResponsiveContainer>  
-              <div className="grid grid-cols-2 gap-2 mt-4">  
-                <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded">  
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Total Buildings</p>  
-                  <p className="text-xl font-semibold text-gray-800 dark:text-white">{mockData.buildings.length}</p>  
-                </div>  
-                <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded">  
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Total Floors</p>  
-                  <p className="text-xl font-semibold text-gray-800 dark:text-white">15</p>  
-                </div>  
-              </div>  
-            </div>  
-          </div>  
-        )}
-        
-        {/* Other tabs would have their own content */}
-        {activeTab !== 'overview' && (
-          <div className="flex justify-center items-center p-8 bg-white dark:bg-gray-800 rounded-lg shadow">
-            <p className="text-lg text-gray-400 dark:text-gray-500">Content for the {activeTab} tab will be implemented soon</p>
-          </div>
-        )}
+        {/* Tab Content */}  
+        {activeTab === 'overview' && <OverviewTab mockData={mockData} />}
+        {activeTab === 'leases' && <LeaseManagementTab mockData={mockData} />}
+        {activeTab === 'occupancy' && <OccupancyAnalysisTab mockData={mockData} />}
+        {activeTab === 'alerts' && <AlertsAndNotificationsTab mockData={mockData} />}
       </main>  
     </div>  
   );  

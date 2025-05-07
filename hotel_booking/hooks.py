@@ -253,7 +253,7 @@ website_route_rules = [
     {"from_route": "/edit-booking", "to_route": "hotel_booking/www/edit-booking.html"},
     {"from_route": "/property-details", "to_route": "hotel_booking/www/property-details.html"},
     # Root redirect
-    {"from_route": "/", "to_route": "hotel_booking/www/dashboard.html"},
+    # {"from_route": "/", "to_route": "hotel_booking/www/dashboard.html"},
 
   ]
 # Include your React app's CSS and JS in the header of web templates
