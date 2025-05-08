@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../components/ui/ThemeContext';
 import { Calendar, ChevronLeft, ChevronRight, Search, Filter, Plus, User, Home, CheckCircle, XCircle } from 'lucide-react';
+import BookingModal from '../components/ui/modals/BookingModal';
 
 const BookingsPage = () => {
   const { themeStyles } = useTheme();
@@ -10,6 +11,7 @@ const BookingsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProperty, setSelectedProperty] = useState('all');
   const [selectedStatus, setSelectedStatus] = useState('all');
+  const [showBookingModal, setShowBookingModal] = useState(false);
 
   // Mock data for bookings
   const mockBookings = [
@@ -152,14 +154,23 @@ const BookingsPage = () => {
   // Check if a booking is for today
   const isToday = (dateString) => dateString === today;
 
-// Add these handler functions
-const handleCalendarViewClick = () => {
-  navigate('/booking-calendar');
-};
+  // Handler for calendar view button
+  const handleCalendarViewClick = () => {
+    navigate('/booking-calendar');
+  };
 
-const handleNewBookingClick = () => {
-  navigate('/new-booking');
-};
+  // Open booking modal
+  const openBookingModal = () => {
+    setShowBookingModal(true);
+  };
+
+  // Handle booking submission
+  const handleBookingSubmit = (bookingData) => {
+    console.log('New booking created:', bookingData);
+    // In a real app, you would add this booking to your state or make an API call
+    // For now, we'll just close the modal
+    setShowBookingModal(false);
+  };
 
   return (
     <div className={`min-h-screen ${themeStyles.background}`}>
@@ -171,26 +182,16 @@ const handleNewBookingClick = () => {
             <p className="text-gray-600 dark:text-gray-300 mt-1">Manage your guest bookings</p>
           </div>
           
-          {/* <div className="flex mt-4 sm:mt-0 space-x-2">
-            <button className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 flex items-center">
-              <Calendar size={16} className="mr-1" />
-              <span>Calendar View</span>
-            </button>
-            <button className="px-3 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 flex items-center">
-              <Plus size={16} className="mr-1" />
-              <span>New Booking</span>
-            </button>
-          </div> */}
           <div className="flex mt-4 sm:mt-0 space-x-2">
             <button 
-              onClick={() => navigate('/booking-calendar')}
+              onClick={handleCalendarViewClick}
               className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 flex items-center"
             >
               <Calendar size={16} className="mr-1" />
               <span>Calendar View</span>
             </button>
             <button 
-              onClick={() => navigate('/new-booking')}
+              onClick={openBookingModal}
               className="px-3 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 flex items-center"
             >
               <Plus size={16} className="mr-1" />
@@ -429,6 +430,13 @@ const handleNewBookingClick = () => {
           </div>
         )}
       </div>
+
+      {/* BookingModal Component */}
+      <BookingModal
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        onSubmit={handleBookingSubmit}
+      />
     </div>
   );
 };
