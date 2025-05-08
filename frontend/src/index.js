@@ -137,6 +137,7 @@ import PropertiesPage from "./pages/PropertiesPage";
 import BookingCalendar from "./pages/BookingCalendar";
 import BookingDetails from "./pages/BookingDetails";
 import BookingForm from "./pages/BookingForm";
+import AccountsPage from "./pages/AccountsPage";
 import { ThemeProvider } from "./components/ui/ThemeContext";
 import "./styles/base.css";
 
@@ -194,6 +195,7 @@ if (container) {
 			isEdit: true,
 			bookingId: window.bookingId,
 		}),
+		mountComponentIfElementExists("accounts-root", AccountsPage),
 	];
 
 	// Log error if no component was mounted

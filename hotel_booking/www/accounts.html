@@ -1,0 +1,10 @@
+{% extends "templates/layout.html" %} {% block title %}Financial Management - Hotel Booking
+Management System{% endblock %} {% block content %}
+<!-- This div will be a target for React's component-specific rendering -->
+<div id="accounts-root"></div>
+{% endblock %} {% block script %}
+<script>
+	window.socketPort = "{{ socketio_port }}";
+	window.currentPage = "accounts";
+</script>
+{% endblock %}

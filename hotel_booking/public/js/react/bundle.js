@@ -980,14 +980,17 @@ video {
 .left-3 {
   left: 0.75rem;
 }
-.top-3 {
-  top: 0.75rem;
-}
 .left-4 {
   left: 1rem;
 }
+.top-3 {
+  top: 0.75rem;
+}
 .top-4 {
   top: 1rem;
+}
+.z-50 {
+  z-index: 50;
 }
 .col-span-1 {
   grid-column: span 1 / span 1;
@@ -1013,6 +1016,12 @@ video {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+.-mb-8 {
+  margin-bottom: -2rem;
+}
+.-ml-px {
+  margin-left: -1px;
 }
 .mb-1 {
   margin-bottom: 0.25rem;
@@ -1074,12 +1083,6 @@ video {
 .mt-6 {
   margin-top: 1.5rem;
 }
-.-mb-8 {
-  margin-bottom: -2rem;
-}
-.-ml-px {
-  margin-left: -1px;
-}
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -1125,6 +1128,9 @@ video {
 .h-2 {
   height: 0.5rem;
 }
+.h-2\\.5 {
+  height: 0.625rem;
+}
 .h-24 {
   height: 6rem;
 }
@@ -1161,11 +1167,17 @@ video {
 .min-h-screen {
   min-height: 100vh;
 }
+.w-0\\.5 {
+  width: 0.125rem;
+}
 .w-10 {
   width: 2.5rem;
 }
 .w-12 {
   width: 3rem;
+}
+.w-16 {
+  width: 4rem;
 }
 .w-2 {
   width: 0.5rem;
@@ -1200,17 +1212,17 @@ video {
 .w-full {
   width: 100%;
 }
-.w-0\\.5 {
-  width: 0.125rem;
-}
-.w-16 {
-  width: 4rem;
+.min-w-0 {
+  min-width: 0px;
 }
 .min-w-full {
   min-width: 100%;
 }
-.min-w-0 {
-  min-width: 0px;
+.max-w-2xl {
+  max-width: 42rem;
+}
+.max-w-3xl {
+  max-width: 48rem;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -1221,12 +1233,6 @@ video {
 .max-w-none {
   max-width: none;
 }
-.max-w-2xl {
-  max-width: 42rem;
-}
-.max-w-3xl {
-  max-width: 48rem;
-}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1235,6 +1241,9 @@ video {
 }
 .flex-grow {
   flex-grow: 1;
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 @keyframes pulse {
 
@@ -1313,6 +1322,11 @@ video {
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -1348,11 +1362,6 @@ video {
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
-.space-x-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
-}
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1367,6 +1376,9 @@ video {
 }
 .overflow-x-auto {
   overflow-x: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
 }
 .whitespace-nowrap {
   white-space: nowrap;
@@ -1423,6 +1435,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(253 230 138 / var(--tw-border-opacity, 1));
 }
+.border-amber-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(252 211 77 / var(--tw-border-opacity, 1));
+}
 .border-blue-100 {
   --tw-border-opacity: 1;
   border-color: rgb(219 234 254 / var(--tw-border-opacity, 1));
@@ -1451,13 +1467,29 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(220 252 231 / var(--tw-border-opacity, 1));
 }
+.border-green-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(187 247 208 / var(--tw-border-opacity, 1));
+}
+.border-green-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(134 239 172 / var(--tw-border-opacity, 1));
+}
 .border-purple-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 232 255 / var(--tw-border-opacity, 1));
 }
+.border-purple-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(216 180 254 / var(--tw-border-opacity, 1));
+}
 .border-red-100 {
   --tw-border-opacity: 1;
   border-color: rgb(254 226 226 / var(--tw-border-opacity, 1));
+}
+.border-red-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(254 202 202 / var(--tw-border-opacity, 1));
 }
 .border-red-300 {
   --tw-border-opacity: 1;
@@ -1527,6 +1559,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
+}
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
@@ -1579,6 +1615,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(254 242 242 / var(--tw-bg-opacity, 1));
 }
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
+}
 .bg-slate-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity, 1));
@@ -1591,9 +1631,8 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(253 224 71 / var(--tw-bg-opacity, 1));
 }
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
+.bg-opacity-75 {
+  --tw-bg-opacity: 0.75;
 }
 .p-1 {
   padding: 0.25rem;
@@ -1665,8 +1704,14 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.pb-20 {
+  padding-bottom: 5rem;
+}
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
 }
 .pl-10 {
   padding-left: 2.5rem;
@@ -1686,6 +1731,9 @@ video {
 .pt-1 {
   padding-top: 0.25rem;
 }
+.pt-1\\.5 {
+  padding-top: 0.375rem;
+}
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1695,12 +1743,6 @@ video {
 .pt-4 {
   padding-top: 1rem;
 }
-.pb-8 {
-  padding-bottom: 2rem;
-}
-.pt-1\\.5 {
-  padding-top: 0.375rem;
-}
 .text-left {
   text-align: left;
 }
@@ -1709,6 +1751,9 @@ video {
 }
 .text-right {
   text-align: right;
+}
+.align-bottom {
+  vertical-align: bottom;
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -1787,6 +1832,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(147 197 253 / var(--tw-text-opacity, 1));
 }
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
@@ -1839,6 +1888,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity, 1));
 }
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+}
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity, 1));
@@ -1855,6 +1908,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(126 34 206 / var(--tw-text-opacity, 1));
 }
+.text-purple-800 {
+  --tw-text-opacity: 1;
+  color: rgb(107 33 168 / var(--tw-text-opacity, 1));
+}
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity, 1));
@@ -1870,14 +1927,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
-}
-.text-purple-800 {
-  --tw-text-opacity: 1;
-  color: rgb(107 33 168 / var(--tw-text-opacity, 1));
 }
 .placeholder-gray-500::-moz-placeholder {
   --tw-placeholder-opacity: 1;
@@ -1935,6 +1984,16 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-opacity {
+  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2063,6 +2122,11 @@ video {
   background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1));
 }
 
+.hover\\:bg-green-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 128 61 / var(--tw-bg-opacity, 1));
+}
+
 .hover\\:bg-purple-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 232 255 / var(--tw-bg-opacity, 1));
@@ -2071,11 +2135,6 @@ video {
 .hover\\:bg-red-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(254 202 202 / var(--tw-bg-opacity, 1));
-}
-
-.hover\\:bg-green-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(21 128 61 / var(--tw-bg-opacity, 1));
 }
 
 .hover\\:bg-red-700:hover {
@@ -2169,9 +2228,18 @@ video {
   --tw-ring-offset-width: 2px;
 }
 
+.disabled\\:opacity-50:disabled {
+  opacity: 0.5;
+}
+
 .dark\\:divide-gray-700:is(.dark *) > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-divide-opacity, 1));
+}
+
+.dark\\:border-amber-700:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(180 83 9 / var(--tw-border-opacity, 1));
 }
 
 .dark\\:border-amber-800:is(.dark *) {
@@ -2199,9 +2267,19 @@ video {
   border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
 }
 
+.dark\\:border-green-700:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(21 128 61 / var(--tw-border-opacity, 1));
+}
+
 .dark\\:border-green-800:is(.dark *) {
   --tw-border-opacity: 1;
   border-color: rgb(22 101 52 / var(--tw-border-opacity, 1));
+}
+
+.dark\\:border-purple-700:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(126 34 206 / var(--tw-border-opacity, 1));
 }
 
 .dark\\:border-purple-800:is(.dark *) {
@@ -2212,6 +2290,11 @@ video {
 .dark\\:border-red-600:is(.dark *) {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity, 1));
+}
+
+.dark\\:border-red-700:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(185 28 28 / var(--tw-border-opacity, 1));
 }
 
 .dark\\:border-red-800:is(.dark *) {
@@ -2269,6 +2352,11 @@ video {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
 }
 
+.dark\\:bg-gray-900:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+}
+
 .dark\\:bg-green-800:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(22 101 52 / var(--tw-bg-opacity, 1));
@@ -2301,6 +2389,10 @@ video {
   background-color: rgb(51 65 85 / var(--tw-bg-opacity, 1));
 }
 
+.dark\\:bg-opacity-75:is(.dark *) {
+  --tw-bg-opacity: 0.75;
+}
+
 .dark\\:text-amber-300:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(252 211 77 / var(--tw-text-opacity, 1));
@@ -2309,6 +2401,11 @@ video {
 .dark\\:text-amber-400:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(251 191 36 / var(--tw-text-opacity, 1));
+}
+
+.dark\\:text-amber-500:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(245 158 11 / var(--tw-text-opacity, 1));
 }
 
 .dark\\:text-blue-200:is(.dark *) {
@@ -2376,9 +2473,24 @@ video {
   color: rgb(74 222 128 / var(--tw-text-opacity, 1));
 }
 
+.dark\\:text-green-500:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+}
+
+.dark\\:text-purple-300:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(216 180 254 / var(--tw-text-opacity, 1));
+}
+
 .dark\\:text-purple-400:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(192 132 252 / var(--tw-text-opacity, 1));
+}
+
+.dark\\:text-purple-500:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity, 1));
 }
 
 .dark\\:text-red-300:is(.dark *) {
@@ -2391,14 +2503,14 @@ video {
   color: rgb(248 113 113 / var(--tw-text-opacity, 1));
 }
 
+.dark\\:text-red-500:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+
 .dark\\:text-white:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.dark\\:text-purple-300:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(216 180 254 / var(--tw-text-opacity, 1));
 }
 
 .dark\\:placeholder-gray-400:is(.dark *)::-moz-placeholder {
@@ -2477,6 +2589,11 @@ video {
   color: rgb(96 165 250 / var(--tw-text-opacity, 1));
 }
 
+.dark\\:hover\\:text-blue-500:hover:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+
 .dark\\:hover\\:text-gray-200:hover:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity, 1));
@@ -2502,12 +2619,12 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.dark\\:hover\\:text-blue-500:hover:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
-}
-
 @media (min-width: 640px) {
+
+  .sm\\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
   .sm\\:ml-6 {
     margin-left: 1.5rem;
@@ -2515,6 +2632,14 @@ video {
 
   .sm\\:mt-0 {
     margin-top: 0px;
+  }
+
+  .sm\\:block {
+    display: block;
+  }
+
+  .sm\\:inline-block {
+    display: inline-block;
   }
 
   .sm\\:flex {
@@ -2525,12 +2650,28 @@ video {
     display: none;
   }
 
+  .sm\\:h-screen {
+    height: 100vh;
+  }
+
   .sm\\:w-auto {
     width: auto;
   }
 
+  .sm\\:w-full {
+    width: 100%;
+  }
+
+  .sm\\:max-w-lg {
+    max-width: 32rem;
+  }
+
   .sm\\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .sm\\:flex-row {
@@ -2559,13 +2700,25 @@ video {
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
+  .sm\\:p-0 {
+    padding: 0px;
+  }
+
   .sm\\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
+  .sm\\:align-middle {
+    vertical-align: middle;
+  }
 }
 
 @media (min-width: 768px) {
+
+  .md\\:max-w-xl {
+    max-width: 36rem;
+  }
 
   .md\\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2618,7 +2771,7 @@ video {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/base.css"],"names":[],"mappings":"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AmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,qBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,qBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,qBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,qBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,iBAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,iBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,iBAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,eAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,2BAAmB;EAAnB;AAAmB;AAAnB;EAAA,2BAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,0EAAmB;EAAnB,8FAAmB;EAAnB;AAAmB;AAAnB;EAAA,gDAAmB;EAAnB,6DAAmB;EAAnB;AAAmB;AAAnB;EAAA,6EAAmB;EAAnB,iGAAmB;EAAnB;AAAmB;AAAnB;EAAA,0CAAmB;EAAnB,uDAAmB;EAAnB;AAAmB;AAAnB;EAAA,2GAAmB;EAAnB,yGAAmB;EAAnB;AAAmB;AAAnB;EAAA,2GAAmB;EAAnB,yGAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,gKAAmB;EAAnB,wJAAmB;EAAnB,iLAAmB;EAAnB,wDAAmB;EAAnB;AAAmB;AAAnB;EAAA,+BAAmB;EAAnB,wDAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;;AAEnB,iBAAiB;;AA2BjB,oBAAoB;AACpB;EACE,aAAa;AACf;;AAEA;EACE,wBAAwB;EACxB,qBAAqB;AACvB;;AAEA,mCAAmC;AACnC;EACE,oBAAoB;EACpB,qBAAqB;EACrB,4BAA4B;EAC5B,gBAAgB;AAClB;;AAEA,wBAAwB;AACxB;EACE,WAAW,wBAAwB,EAAE;EACrC,MAAM,4BAA4B,EAAE;AACtC;;AAEA,sBAAsB;AACtB;EACE,2CAA2C;AAC7C;;AAEA,sBAAsB;AACtB;EACE,kCAAkC;AACpC;;AAEA;EACE,KAAK,UAAU,EAAE;EACjB,OAAO,UAAU,EAAE;AACrB;;AAEA,2BAA2B;AAC3B;EACE,yBAAyB;AAC3B;;AAEA;EACE,2BAA2B;EAC3B,qFAAqF;AACvF;;AA9EA;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,6EA8EC;EA9ED,iGA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,8BA8EC;EA9ED;AA8EC;;AA9ED;EAAA,2GA8EC;EA9ED,yGA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,2BA8EC;EA9ED;AA8EC;;AA9ED;EAAA,2BA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;;EAAA;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,oDA8EC;IA9ED;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,oDA8EC;IA9ED;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,2DA8EC;IA9ED;EA8EC;;EA9ED;IAAA,oBA8EC;IA9ED;EA8EC;AAAA;;AA9ED;;EAAA;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,oDA8EC;IA9ED;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,2DA8EC;IA9ED;EA8EC;AAAA;;AA9ED;;EAAA;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA,kBA8EC;IA9ED;EA8EC;AAAA","sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n/* Import fonts */\n@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');\n@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');\n\n@layer base {\n  :root {\n    --background: 0 0% 100%;\n    --foreground: 222.2 84% 4.9%;\n    --card: 0 0% 100%;\n    --card-foreground: 222.2 84% 4.9%;\n    --popover: 0 0% 100%;\n    --popover-foreground: 222.2 84% 4.9%;\n    --primary: 221.2 83.2% 53.3%;\n    --primary-foreground: 210 40% 98%;\n    --secondary: 210 40% 96.1%;\n    --secondary-foreground: 222.2 47.4% 11.2%;\n    --muted: 210 40% 96.1%;\n    --muted-foreground: 215.4 16.3% 46.9%;\n    --accent: 210 40% 96.1%;\n    --accent-foreground: 222.2 47.4% 11.2%;\n    --border: 214.3 31.8% 91.4%;\n    --input: 214.3 31.8% 91.4%;\n    --ring: 221.2 83.2% 53.3%;\n    --radius: 0.5rem;\n  }\n}\n\n/* Utility Classes */\n.scrollbar-hide::-webkit-scrollbar {\n  display: none;\n}\n\n.scrollbar-hide {\n  -ms-overflow-style: none;\n  scrollbar-width: none;\n}\n\n/* Line clamp for text truncation */\n.line-clamp-2 {\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n}\n\n/* Animation Keyframes */\n@keyframes float-up {\n  0%, 100% { transform: translateY(0); }\n  50% { transform: translateY(-10px); }\n}\n\n/* Animation Classes */\n.animate-float-up {\n  animation: float-up 3s ease-in-out infinite;\n}\n\n/* Fade In Animation */\n.fade-in {\n  animation: fadeIn 0.3s ease-in-out;\n}\n\n@keyframes fadeIn {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n\n/* Hover Effect for Cards */\n.card-hover {\n  transition: all 0.3s ease;\n}\n\n.card-hover:hover {\n  transform: translateY(-5px);\n  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/base.css"],"names":[],"mappings":"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;EAAA;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,qBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,qBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,qBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,qBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,iBAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,iBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,iBAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,eAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,mBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA,kBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,2BAAmB;EAAnB;AAAmB;AAAnB;EAAA,2BAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,0EAAmB;EAAnB,8FAAmB;EAAnB;AAAmB;AAAnB;EAAA,gDAAmB;EAAnB,6DAAmB;EAAnB;AAAmB;AAAnB;EAAA,6EAAmB;EAAnB,iGAAmB;EAAnB;AAAmB;AAAnB;EAAA,0CAAmB;EAAnB,uDAAmB;EAAnB;AAAmB;AAAnB;EAAA,2GAAmB;EAAnB,yGAAmB;EAAnB;AAAmB;AAAnB;EAAA,2GAAmB;EAAnB,yGAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA,oBAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;AAAnB;EAAA,gKAAmB;EAAnB,wJAAmB;EAAnB,iLAAmB;EAAnB,wDAAmB;EAAnB;AAAmB;AAAnB;EAAA,wBAAmB;EAAnB,wDAAmB;EAAnB;AAAmB;AAAnB;EAAA,4BAAmB;EAAnB,wDAAmB;EAAnB;AAAmB;AAAnB;EAAA,+BAAmB;EAAnB,wDAAmB;EAAnB;AAAmB;AAAnB;EAAA;AAAmB;;AAEnB,iBAAiB;;AA2BjB,oBAAoB;AACpB;EACE,aAAa;AACf;;AAEA;EACE,wBAAwB;EACxB,qBAAqB;AACvB;;AAEA,mCAAmC;AACnC;EACE,oBAAoB;EACpB,qBAAqB;EACrB,4BAA4B;EAC5B,gBAAgB;AAClB;;AAEA,wBAAwB;AACxB;EACE,WAAW,wBAAwB,EAAE;EACrC,MAAM,4BAA4B,EAAE;AACtC;;AAEA,sBAAsB;AACtB;EACE,2CAA2C;AAC7C;;AAEA,sBAAsB;AACtB;EACE,kCAAkC;AACpC;;AAEA;EACE,KAAK,UAAU,EAAE;EACjB,OAAO,UAAU,EAAE;AACrB;;AAEA,2BAA2B;AAC3B;EACE,yBAAyB;AAC3B;;AAEA;EACE,2BAA2B;EAC3B,qFAAqF;AACvF;;AA9EA;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,6EA8EC;EA9ED,iGA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,8BA8EC;EA9ED;AA8EC;;AA9ED;EAAA,2GA8EC;EA9ED,yGA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,2BA8EC;EA9ED;AA8EC;;AA9ED;EAAA,2BA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,sBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA;AA8EC;;AA9ED;EAAA,kBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;EAAA,oBA8EC;EA9ED;AA8EC;;AA9ED;;EAAA;IAAA,gBA8EC;IA9ED;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,oDA8EC;IA9ED;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,oDA8EC;IA9ED;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,2DA8EC;IA9ED;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA,oBA8EC;IA9ED;EA8EC;;EA9ED;IAAA;EA8EC;AAAA;;AA9ED;;EAAA;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,oDA8EC;IA9ED;EA8EC;;EA9ED;IAAA,uBA8EC;IA9ED,2DA8EC;IA9ED;EA8EC;AAAA;;AA9ED;;EAAA;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA;EA8EC;;EA9ED;IAAA,kBA8EC;IA9ED;EA8EC;AAAA","sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n/* Import fonts */\n@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');\n@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');\n\n@layer base {\n  :root {\n    --background: 0 0% 100%;\n    --foreground: 222.2 84% 4.9%;\n    --card: 0 0% 100%;\n    --card-foreground: 222.2 84% 4.9%;\n    --popover: 0 0% 100%;\n    --popover-foreground: 222.2 84% 4.9%;\n    --primary: 221.2 83.2% 53.3%;\n    --primary-foreground: 210 40% 98%;\n    --secondary: 210 40% 96.1%;\n    --secondary-foreground: 222.2 47.4% 11.2%;\n    --muted: 210 40% 96.1%;\n    --muted-foreground: 215.4 16.3% 46.9%;\n    --accent: 210 40% 96.1%;\n    --accent-foreground: 222.2 47.4% 11.2%;\n    --border: 214.3 31.8% 91.4%;\n    --input: 214.3 31.8% 91.4%;\n    --ring: 221.2 83.2% 53.3%;\n    --radius: 0.5rem;\n  }\n}\n\n/* Utility Classes */\n.scrollbar-hide::-webkit-scrollbar {\n  display: none;\n}\n\n.scrollbar-hide {\n  -ms-overflow-style: none;\n  scrollbar-width: none;\n}\n\n/* Line clamp for text truncation */\n.line-clamp-2 {\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n}\n\n/* Animation Keyframes */\n@keyframes float-up {\n  0%, 100% { transform: translateY(0); }\n  50% { transform: translateY(-10px); }\n}\n\n/* Animation Classes */\n.animate-float-up {\n  animation: float-up 3s ease-in-out infinite;\n}\n\n/* Fade In Animation */\n.fade-in {\n  animation: fadeIn 0.3s ease-in-out;\n}\n\n@keyframes fadeIn {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n\n/* Hover Effect for Cards */\n.card-hover {\n  transition: all 0.3s ease;\n}\n\n.card-hover:hover {\n  transform: translateY(-5px);\n  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28132,6 +28285,36 @@ const ArrowLeft = (0,_createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__["default
 
 /***/ }),
 
+/***/ "./node_modules/lucide-react/dist/esm/icons/bar-chart-2.mjs":
+/*!******************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/bar-chart-2.mjs ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BarChart2)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.mjs */ "./node_modules/lucide-react/dist/esm/createLucideIcon.mjs");
+/**
+ * lucide-react v0.0.1 - ISC
+ */
+
+
+
+const BarChart2 = (0,_createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("BarChart2", [
+  ["line", { x1: "18", x2: "18", y1: "20", y2: "10", key: "1xfpm4" }],
+  ["line", { x1: "12", x2: "12", y1: "20", y2: "4", key: "be30l9" }],
+  ["line", { x1: "6", x2: "6", y1: "20", y2: "14", key: "1r4le6" }]
+]);
+
+
+//# sourceMappingURL=bar-chart-2.mjs.map
+
+
+/***/ }),
+
 /***/ "./node_modules/lucide-react/dist/esm/icons/bar-chart.mjs":
 /*!****************************************************************!*\
   !*** ./node_modules/lucide-react/dist/esm/icons/bar-chart.mjs ***!
@@ -28502,6 +28685,68 @@ const CreditCard = (0,_createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__["defaul
 
 
 //# sourceMappingURL=credit-card.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/dollar-sign.mjs":
+/*!******************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/dollar-sign.mjs ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ DollarSign)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.mjs */ "./node_modules/lucide-react/dist/esm/createLucideIcon.mjs");
+/**
+ * lucide-react v0.0.1 - ISC
+ */
+
+
+
+const DollarSign = (0,_createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("DollarSign", [
+  ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
+  [
+    "path",
+    { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }
+  ]
+]);
+
+
+//# sourceMappingURL=dollar-sign.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/download.mjs":
+/*!***************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/download.mjs ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Download)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.mjs */ "./node_modules/lucide-react/dist/esm/createLucideIcon.mjs");
+/**
+ * lucide-react v0.0.1 - ISC
+ */
+
+
+
+const Download = (0,_createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("Download", [
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
+  ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
+]);
+
+
+//# sourceMappingURL=download.mjs.map
 
 
 /***/ }),
@@ -94677,7 +94922,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-AYJ5UCUI.mjs");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-AYJ5UCUI.mjs");
 /* harmony import */ var _components_AppWrapper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/AppWrapper */ "./src/components/AppWrapper.jsx");
 /* harmony import */ var _pages_Dashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Dashboard */ "./src/pages/Dashboard.jsx");
 /* harmony import */ var _pages_BookingsPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/BookingsPage */ "./src/pages/BookingsPage.jsx");
@@ -94687,7 +94932,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_PropertyDetails__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/PropertyDetails */ "./src/pages/PropertyDetails.jsx");
 /* harmony import */ var _pages_BookingDetails__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/BookingDetails */ "./src/pages/BookingDetails.jsx");
 /* harmony import */ var _pages_BookingForm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/BookingForm */ "./src/pages/BookingForm.jsx");
-/* harmony import */ var _pages_PageNotFound__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/PageNotFound */ "./src/pages/PageNotFound.jsx");
+/* harmony import */ var _pages_AccountsPage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/AccountsPage */ "./src/pages/AccountsPage.jsx");
+/* harmony import */ var _pages_PageNotFound__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/PageNotFound */ "./src/pages/PageNotFound.jsx");
 // frontend/src/AppRoutes.jsx
 // Updated routes file to fix 404 issues
 
@@ -94705,57 +94951,61 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var AppRoutes = function AppRoutes() {
   // Get the current path from window.location
   var currentPath = window.location.pathname;
 
   // Check for trailing slash and remove it for consistency
   var normalizedPath = currentPath.endsWith('/') && currentPath !== '/' ? currentPath.slice(0, -1) : currentPath;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.BrowserRouter, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.BrowserRouter, {
     basename: ""
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_AppWrapper__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_AppWrapper__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/dashboard",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Navigate, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Navigate, {
       to: "/dashboard",
       replace: true
     })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/properties",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_PropertiesPage__WEBPACK_IMPORTED_MODULE_6__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/property-details",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_PropertyDetails__WEBPACK_IMPORTED_MODULE_7__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/add-property",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_PropertyDetails__WEBPACK_IMPORTED_MODULE_7__["default"], {
       isNew: true
     })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/rooms",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_RoomManagement__WEBPACK_IMPORTED_MODULE_4__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/bookings",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_BookingsPage__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/booking-calendar",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_BookingCalendar__WEBPACK_IMPORTED_MODULE_5__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/booking-details",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_BookingDetails__WEBPACK_IMPORTED_MODULE_8__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/new-booking",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_BookingForm__WEBPACK_IMPORTED_MODULE_9__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/edit-booking",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_BookingForm__WEBPACK_IMPORTED_MODULE_9__["default"], {
       isEdit: true
     })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+    path: "/accounts",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_AccountsPage__WEBPACK_IMPORTED_MODULE_10__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "*",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_PageNotFound__WEBPACK_IMPORTED_MODULE_10__["default"], null)
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_PageNotFound__WEBPACK_IMPORTED_MODULE_11__["default"], null)
   }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AppRoutes);
@@ -95223,6 +95473,1474 @@ var Dashboard = function Dashboard() {
   })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Dashboard);
+
+/***/ }),
+
+/***/ "./src/components/accounts/AllTransactionsTab.jsx":
+/*!********************************************************!*\
+  !*** ./src/components/accounts/AllTransactionsTab.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/search.mjs");
+/* harmony import */ var _TransactionFilters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TransactionFilters */ "./src/components/accounts/TransactionFilters.jsx");
+
+
+
+var AllTransactionsTab = function AllTransactionsTab(_ref) {
+  var filteredTransactions = _ref.filteredTransactions,
+    calculateTotals = _ref.calculateTotals,
+    formatCurrency = _ref.formatCurrency,
+    formatDate = _ref.formatDate,
+    searchTerm = _ref.searchTerm,
+    setSearchTerm = _ref.setSearchTerm,
+    selectedPropertyFilter = _ref.selectedPropertyFilter,
+    setSelectedPropertyFilter = _ref.setSelectedPropertyFilter,
+    selectedPaymentMode = _ref.selectedPaymentMode,
+    setSelectedPaymentMode = _ref.setSelectedPaymentMode,
+    selectedDateRange = _ref.selectedDateRange,
+    setSelectedDateRange = _ref.setSelectedDateRange,
+    properties = _ref.properties;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+    className: "text-lg font-medium text-gray-900 dark:text-white mb-4"
+  }, "All Financial Transactions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"
+  }, function () {
+    var totals = calculateTotals(filteredTransactions);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "bg-purple-50 dark:bg-purple-900/30 rounded-lg p-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "text-sm text-gray-500 dark:text-gray-400"
+    }, "Lease Payments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "text-2xl font-bold text-purple-600 dark:text-purple-400 mt-1"
+    }, formatCurrency(totals.leasePayments))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "bg-green-50 dark:bg-green-900/30 rounded-lg p-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "text-sm text-gray-500 dark:text-gray-400"
+    }, "Sublease Revenue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "text-2xl font-bold text-green-600 dark:text-green-400 mt-1"
+    }, formatCurrency(totals.subleaseRevenue))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "bg-red-50 dark:bg-red-900/30 rounded-lg p-4"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "text-sm text-gray-500 dark:text-gray-400"
+    }, "Expenses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "text-2xl font-bold text-red-600 dark:text-red-400 mt-1"
+    }, formatCurrency(totals.expenses))));
+  }()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "relative flex-grow"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    size: 18,
+    className: "text-gray-400"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    className: "block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500",
+    placeholder: "Search transactions...",
+    value: searchTerm,
+    onChange: function onChange(e) {
+      return setSearchTerm(e.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TransactionFilters__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedPropertyFilter: selectedPropertyFilter,
+    setSelectedPropertyFilter: setSelectedPropertyFilter,
+    selectedPaymentMode: selectedPaymentMode,
+    setSelectedPaymentMode: setSelectedPaymentMode,
+    selectedDateRange: selectedDateRange,
+    setSelectedDateRange: setSelectedDateRange,
+    properties: properties
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "overflow-x-auto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", {
+    className: "min-w-full divide-y divide-gray-200 dark:divide-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", {
+    className: "bg-gray-50 dark:bg-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Property"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Type"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Payment Mode"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Amount"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", {
+    className: "bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"
+  }, filteredTransactions.map(function (transaction) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", {
+      key: transaction.id,
+      className: "hover:bg-gray-50 dark:hover:bg-gray-700"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, formatDate(transaction.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+    }, transaction.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, transaction.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, transaction.property), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full \n                      ".concat(transaction.type === 'lease-payment' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300' : transaction.type === 'sublease-received' ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' : 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300')
+    }, transaction.type === 'lease-payment' ? 'Lease Payment' : transaction.type === 'sublease-received' ? 'Sublease Revenue' : 'Expense')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full \n                      ".concat(transaction.paymentMode === 'bank' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300')
+    }, transaction.paymentMode === 'bank' ? 'Bank Transfer' : 'Cash')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full \n                      ".concat(transaction.status === 'completed' ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300')
+    }, transaction.status === 'completed' ? 'Completed' : 'Pending')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-right"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: transaction.amount > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+    }, transaction.amount > 0 ? '+' : '', formatCurrency(transaction.amount))));
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mt-4 flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Showing ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "font-medium"
+  }, filteredTransactions.length), " transactions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex space-x-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+  }, "Previous"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+  }, "Next")))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AllTransactionsTab);
+
+/***/ }),
+
+/***/ "./src/components/accounts/FinancialSummary.jsx":
+/*!******************************************************!*\
+  !*** ./src/components/accounts/FinancialSummary.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/calendar.mjs");
+
+
+var FinancialSummary = function FinancialSummary(_ref) {
+  var financialSummary = _ref.financialSummary,
+    formatCurrency = _ref.formatCurrency,
+    setActiveTab = _ref.setActiveTab;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "grid grid-cols-1 md:grid-cols-3 gap-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+    className: "text-lg font-medium text-gray-900 dark:text-white mb-4"
+  }, "Total Financials"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-gray-500 dark:text-gray-400"
+  }, "Total Amount"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-xl font-bold text-gray-900 dark:text-white"
+  }, formatCurrency(financialSummary.totalAmount))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-blue-600 h-2.5 rounded-full",
+    style: {
+      width: '100%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-gray-500 dark:text-gray-400"
+  }, "Advance Received"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-lg font-medium text-green-600 dark:text-green-400"
+  }, formatCurrency(financialSummary.advanceReceived))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-green-500 h-2.5 rounded-full",
+    style: {
+      width: "".concat(financialSummary.advanceReceived / financialSummary.totalAmount * 100, "%")
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-gray-500 dark:text-gray-400"
+  }, "Pending Amount"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-lg font-medium text-amber-600 dark:text-amber-400"
+  }, formatCurrency(financialSummary.pendingAmount))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-amber-500 h-2.5 rounded-full",
+    style: {
+      width: "".concat(financialSummary.pendingAmount / financialSummary.totalAmount * 100, "%")
+    }
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mt-6 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-md"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    className: "h-5 w-5 text-blue-600 dark:text-blue-400 mr-2"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, "Current Month Revenue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-lg font-bold text-blue-600 dark:text-blue-400 mt-1"
+  }, formatCurrency(financialSummary.currentMonthRevenue)))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+    className: "text-lg font-medium text-gray-900 dark:text-white mb-4"
+  }, "Lease Payments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-gray-500 dark:text-gray-400"
+  }, "Total Lease Amount"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-xl font-bold text-gray-900 dark:text-white"
+  }, formatCurrency(financialSummary.leasePayments.total))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-purple-600 h-2.5 rounded-full",
+    style: {
+      width: '100%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-gray-500 dark:text-gray-400"
+  }, "Paid to Property Owners"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-lg font-medium text-green-600 dark:text-green-400"
+  }, formatCurrency(financialSummary.leasePayments.paid))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-green-500 h-2.5 rounded-full",
+    style: {
+      width: "".concat(financialSummary.leasePayments.paid / financialSummary.leasePayments.total * 100, "%")
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-gray-500 dark:text-gray-400"
+  }, "Pending Payments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-lg font-medium text-amber-600 dark:text-amber-400"
+  }, formatCurrency(financialSummary.leasePayments.pending))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-amber-500 h-2.5 rounded-full",
+    style: {
+      width: "".concat(financialSummary.leasePayments.pending / financialSummary.leasePayments.total * 100, "%")
+    }
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mt-6 flex justify-end"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: function onClick() {
+      return setActiveTab('lease-payments');
+    },
+    className: "text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
+  }, "View Lease Details \u2192"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+    className: "text-lg font-medium text-gray-900 dark:text-white mb-4"
+  }, "Sublease Revenue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-gray-500 dark:text-gray-400"
+  }, "Total Expected Revenue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-xl font-bold text-gray-900 dark:text-white"
+  }, formatCurrency(financialSummary.subleaseRevenue.total))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-blue-600 h-2.5 rounded-full",
+    style: {
+      width: '100%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-gray-500 dark:text-gray-400"
+  }, "Received from Tenants"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-lg font-medium text-green-600 dark:text-green-400"
+  }, formatCurrency(financialSummary.subleaseRevenue.paid))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-green-500 h-2.5 rounded-full",
+    style: {
+      width: "".concat(financialSummary.subleaseRevenue.paid / financialSummary.subleaseRevenue.total * 100, "%")
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-gray-500 dark:text-gray-400"
+  }, "Pending Collections"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-lg font-medium text-amber-600 dark:text-amber-400"
+  }, formatCurrency(financialSummary.subleaseRevenue.pending))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-amber-500 h-2.5 rounded-full",
+    style: {
+      width: "".concat(financialSummary.subleaseRevenue.pending / financialSummary.subleaseRevenue.total * 100, "%")
+    }
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mt-6 flex justify-end"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: function onClick() {
+      return setActiveTab('sublease-revenue');
+    },
+    className: "text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
+  }, "View Sublease Details \u2192"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FinancialSummary);
+
+/***/ }),
+
+/***/ "./src/components/accounts/LeasePaymentsTab.jsx":
+/*!******************************************************!*\
+  !*** ./src/components/accounts/LeasePaymentsTab.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/search.mjs");
+/* harmony import */ var _TransactionFilters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TransactionFilters */ "./src/components/accounts/TransactionFilters.jsx");
+
+
+
+var LeasePaymentsTab = function LeasePaymentsTab(_ref) {
+  var financialSummary = _ref.financialSummary,
+    formatCurrency = _ref.formatCurrency,
+    filteredTransactions = _ref.filteredTransactions,
+    formatDate = _ref.formatDate,
+    searchTerm = _ref.searchTerm,
+    setSearchTerm = _ref.setSearchTerm,
+    selectedPropertyFilter = _ref.selectedPropertyFilter,
+    setSelectedPropertyFilter = _ref.setSelectedPropertyFilter,
+    selectedPaymentMode = _ref.selectedPaymentMode,
+    setSelectedPaymentMode = _ref.setSelectedPaymentMode,
+    selectedDateRange = _ref.selectedDateRange,
+    setSelectedDateRange = _ref.setSelectedDateRange,
+    properties = _ref.properties;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+    className: "text-lg font-medium text-gray-900 dark:text-white mb-4"
+  }, "Lease Payment Summary"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-purple-50 dark:bg-purple-900/30 rounded-lg p-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-sm text-gray-500 dark:text-gray-400"
+  }, "Total Lease Payments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-2xl font-bold text-gray-900 dark:text-white mt-1"
+  }, formatCurrency(financialSummary.leasePayments.total))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-green-50 dark:bg-green-900/30 rounded-lg p-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-sm text-gray-500 dark:text-gray-400"
+  }, "Paid to Property Owners"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-2xl font-bold text-green-600 dark:text-green-400 mt-1"
+  }, formatCurrency(financialSummary.leasePayments.paid))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-amber-50 dark:bg-amber-900/30 rounded-lg p-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-sm text-gray-500 dark:text-gray-400"
+  }, "Pending Payments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1"
+  }, formatCurrency(financialSummary.leasePayments.pending)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
+    className: "text-md font-medium text-gray-900 dark:text-white mb-3"
+  }, "Property-wise Lease Distribution"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Al Noor Tower"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(850000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-purple-600 h-2 rounded-full",
+    style: {
+      width: '35%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Zamzam View"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(720000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-purple-600 h-2 rounded-full",
+    style: {
+      width: '30%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Al Safa Heights"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(540000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-purple-600 h-2 rounded-full",
+    style: {
+      width: '22%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Al Masjid Residency"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(340000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-purple-600 h-2 rounded-full",
+    style: {
+      width: '13%'
+    }
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "relative flex-grow"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    size: 18,
+    className: "text-gray-400"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    className: "block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500",
+    placeholder: "Search lease payments...",
+    value: searchTerm,
+    onChange: function onChange(e) {
+      return setSearchTerm(e.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TransactionFilters__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedPropertyFilter: selectedPropertyFilter,
+    setSelectedPropertyFilter: setSelectedPropertyFilter,
+    selectedPaymentMode: selectedPaymentMode,
+    setSelectedPaymentMode: setSelectedPaymentMode,
+    selectedDateRange: selectedDateRange,
+    setSelectedDateRange: setSelectedDateRange,
+    properties: properties
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "overflow-x-auto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", {
+    className: "min-w-full divide-y divide-gray-200 dark:divide-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", {
+    className: "bg-gray-50 dark:bg-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Property"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Payment Mode"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Amount"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", {
+    className: "bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"
+  }, filteredTransactions.filter(function (transaction) {
+    return transaction.type === 'lease-payment';
+  }).map(function (transaction) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", {
+      key: transaction.id,
+      className: "hover:bg-gray-50 dark:hover:bg-gray-700"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, formatDate(transaction.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+    }, transaction.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, transaction.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, transaction.property), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full \n                        ".concat(transaction.paymentMode === 'bank' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300')
+    }, transaction.paymentMode === 'bank' ? 'Bank Transfer' : 'Cash')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full \n                        ".concat(transaction.status === 'completed' ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300')
+    }, transaction.status === 'completed' ? 'Completed' : 'Pending')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-right text-purple-600 dark:text-purple-400"
+    }, "-", formatCurrency(transaction.amount)));
+  }))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LeasePaymentsTab);
+
+/***/ }),
+
+/***/ "./src/components/accounts/RecentTransactions.jsx":
+/*!********************************************************!*\
+  !*** ./src/components/accounts/RecentTransactions.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var RecentTransactions = function RecentTransactions(_ref) {
+  var transactions = _ref.transactions,
+    formatDate = _ref.formatDate,
+    formatCurrency = _ref.formatCurrency,
+    setActiveTab = _ref.setActiveTab;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-white dark:bg-gray-800 rounded-lg shadow"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "px-6 py-4 border-b border-gray-200 dark:border-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+    className: "text-lg font-medium text-gray-900 dark:text-white"
+  }, "Recent Transactions")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "overflow-x-auto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", {
+    className: "min-w-full divide-y divide-gray-200 dark:divide-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", {
+    className: "bg-gray-50 dark:bg-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Property"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Type"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Mode"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Amount"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", {
+    className: "bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"
+  }, transactions.slice(0, 5).map(function (transaction) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", {
+      key: transaction.id,
+      className: "hover:bg-gray-50 dark:hover:bg-gray-700"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, formatDate(transaction.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+    }, transaction.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, transaction.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, transaction.property), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full \n                    ".concat(transaction.type === 'lease-payment' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300' : transaction.type === 'sublease-received' ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' : 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300')
+    }, transaction.type === 'lease-payment' ? 'Lease Payment' : transaction.type === 'sublease-received' ? 'Sublease Revenue' : 'Expense')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full \n                    ".concat(transaction.paymentMode === 'bank' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300')
+    }, transaction.paymentMode === 'bank' ? 'Bank Transfer' : 'Cash')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-right"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: transaction.amount > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+    }, transaction.amount > 0 ? '+' : '', formatCurrency(transaction.amount))));
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "px-6 py-4 border-t border-gray-200 dark:border-gray-700 text-right"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: function onClick() {
+      return setActiveTab('transactions');
+    },
+    className: "text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
+  }, "View All Transactions \u2192")));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RecentTransactions);
+
+/***/ }),
+
+/***/ "./src/components/accounts/SubleaseRevenueTab.jsx":
+/*!********************************************************!*\
+  !*** ./src/components/accounts/SubleaseRevenueTab.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/search.mjs");
+/* harmony import */ var _TransactionFilters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TransactionFilters */ "./src/components/accounts/TransactionFilters.jsx");
+
+
+
+var SubleaseRevenueTab = function SubleaseRevenueTab(_ref) {
+  var financialSummary = _ref.financialSummary,
+    formatCurrency = _ref.formatCurrency,
+    filteredTransactions = _ref.filteredTransactions,
+    formatDate = _ref.formatDate,
+    searchTerm = _ref.searchTerm,
+    setSearchTerm = _ref.setSearchTerm,
+    selectedPropertyFilter = _ref.selectedPropertyFilter,
+    setSelectedPropertyFilter = _ref.setSelectedPropertyFilter,
+    selectedPaymentMode = _ref.selectedPaymentMode,
+    setSelectedPaymentMode = _ref.setSelectedPaymentMode,
+    selectedDateRange = _ref.selectedDateRange,
+    setSelectedDateRange = _ref.setSelectedDateRange,
+    properties = _ref.properties;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+    className: "text-lg font-medium text-gray-900 dark:text-white mb-4"
+  }, "Sublease Revenue Summary"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-sm text-gray-500 dark:text-gray-400"
+  }, "Total Expected Revenue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-2xl font-bold text-gray-900 dark:text-white mt-1"
+  }, formatCurrency(financialSummary.subleaseRevenue.total))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-green-50 dark:bg-green-900/30 rounded-lg p-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-sm text-gray-500 dark:text-gray-400"
+  }, "Received from Tenants"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-2xl font-bold text-green-600 dark:text-green-400 mt-1"
+  }, formatCurrency(financialSummary.subleaseRevenue.paid))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-amber-50 dark:bg-amber-900/30 rounded-lg p-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-sm text-gray-500 dark:text-gray-400"
+  }, "Pending Collections"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1"
+  }, formatCurrency(financialSummary.subleaseRevenue.pending)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-gray-50 dark:bg-gray-700 rounded-lg p-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
+    className: "text-md font-medium text-gray-900 dark:text-white mb-3"
+  }, "Property-wise Sublease Revenue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Al Noor Tower"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(920000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-blue-600 h-2 rounded-full",
+    style: {
+      width: '39%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Zamzam View"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(780000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-blue-600 h-2 rounded-full",
+    style: {
+      width: '33%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Al Safa Heights"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(410000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-blue-600 h-2 rounded-full",
+    style: {
+      width: '17%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Al Masjid Residency"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(260000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-blue-600 h-2 rounded-full",
+    style: {
+      width: '11%'
+    }
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-gray-50 dark:bg-gray-700 rounded-lg p-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
+    className: "text-md font-medium text-gray-900 dark:text-white mb-3"
+  }, "Sublease Revenue by Tenant Type"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Travel Agencies"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(1250000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-green-600 h-2 rounded-full",
+    style: {
+      width: '53%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Group Bookings"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(720000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-green-600 h-2 rounded-full",
+    style: {
+      width: '30%'
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between items-center mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm text-gray-700 dark:text-gray-300"
+  }, "Individual Pilgrims"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "text-sm font-medium text-gray-900 dark:text-white"
+  }, formatCurrency(400000))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-green-600 h-2 rounded-full",
+    style: {
+      width: '17%'
+    }
+  })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "relative flex-grow"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    size: 18,
+    className: "text-gray-400"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    className: "block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500",
+    placeholder: "Search sublease revenue...",
+    value: searchTerm,
+    onChange: function onChange(e) {
+      return setSearchTerm(e.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TransactionFilters__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedPropertyFilter: selectedPropertyFilter,
+    setSelectedPropertyFilter: setSelectedPropertyFilter,
+    selectedPaymentMode: selectedPaymentMode,
+    setSelectedPaymentMode: setSelectedPaymentMode,
+    selectedDateRange: selectedDateRange,
+    setSelectedDateRange: setSelectedDateRange,
+    properties: properties
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "overflow-x-auto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", {
+    className: "min-w-full divide-y divide-gray-200 dark:divide-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("thead", {
+    className: "bg-gray-50 dark:bg-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Property"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Payment Mode"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("th", {
+    className: "px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+  }, "Amount"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tbody", {
+    className: "bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"
+  }, filteredTransactions.filter(function (transaction) {
+    return transaction.type === 'sublease-received';
+  }).map(function (transaction) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", {
+      key: transaction.id,
+      className: "hover:bg-gray-50 dark:hover:bg-gray-700"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, formatDate(transaction.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+    }, transaction.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, transaction.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+    }, transaction.property), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full \n                        ".concat(transaction.paymentMode === 'bank' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300')
+    }, transaction.paymentMode === 'bank' ? 'Bank Transfer' : 'Cash')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full \n                        ".concat(transaction.status === 'completed' ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300')
+    }, transaction.status === 'completed' ? 'Completed' : 'Pending')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", {
+      className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-right text-green-600 dark:text-green-400"
+    }, "+", formatCurrency(transaction.amount)));
+  }))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SubleaseRevenueTab);
+
+/***/ }),
+
+/***/ "./src/components/accounts/TransactionFilters.jsx":
+/*!********************************************************!*\
+  !*** ./src/components/accounts/TransactionFilters.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var TransactionFilters = function TransactionFilters(_ref) {
+  var selectedPropertyFilter = _ref.selectedPropertyFilter,
+    setSelectedPropertyFilter = _ref.setSelectedPropertyFilter,
+    selectedPaymentMode = _ref.selectedPaymentMode,
+    setSelectedPaymentMode = _ref.setSelectedPaymentMode,
+    selectedDateRange = _ref.selectedDateRange,
+    setSelectedDateRange = _ref.setSelectedDateRange,
+    properties = _ref.properties;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex space-x-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    className: "block w-full pl-3 pr-10 py-2 text-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500",
+    value: selectedPropertyFilter,
+    onChange: function onChange(e) {
+      return setSelectedPropertyFilter(e.target.value);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "all"
+  }, "All Properties"), properties.map(function (property) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+      key: property,
+      value: property
+    }, property);
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    className: "block w-full pl-3 pr-10 py-2 text-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500",
+    value: selectedPaymentMode,
+    onChange: function onChange(e) {
+      return setSelectedPaymentMode(e.target.value);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "all"
+  }, "All Payment Modes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "bank"
+  }, "Bank Transfer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "cash"
+  }, "Cash"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    className: "block w-full pl-3 pr-10 py-2 text-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500",
+    value: selectedDateRange,
+    onChange: function onChange(e) {
+      return setSelectedDateRange(e.target.value);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "all"
+  }, "All Time"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "this-month"
+  }, "This Month"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "last-month"
+  }, "Last Month"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "this-year"
+  }, "This Year"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TransactionFilters);
+
+/***/ }),
+
+/***/ "./src/components/accounts/TransactionForm.jsx":
+/*!*****************************************************!*\
+  !*** ./src/components/accounts/TransactionForm.jsx ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ui_ThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ui/ThemeContext */ "./src/components/ui/ThemeContext.jsx");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/x.mjs");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/calendar.mjs");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/building.mjs");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/dollar-sign.mjs");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/credit-card.mjs");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/file-text.mjs");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/alert-circle.mjs");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/check-circle.mjs");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return r; }; var t, r = {}, e = Object.prototype, n = e.hasOwnProperty, o = "function" == typeof Symbol ? Symbol : {}, i = o.iterator || "@@iterator", a = o.asyncIterator || "@@asyncIterator", u = o.toStringTag || "@@toStringTag"; function c(t, r, e, n) { return Object.defineProperty(t, r, { value: e, enumerable: !n, configurable: !n, writable: !n }); } try { c({}, ""); } catch (t) { c = function c(t, r, e) { return t[r] = e; }; } function h(r, e, n, o) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype); return c(a, "_invoke", function (r, e, n) { var o = 1; return function (i, a) { if (3 === o) throw Error("Generator is already running"); if (4 === o) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var u = n.delegate; if (u) { var c = d(u, n); if (c) { if (c === f) continue; return c; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (1 === o) throw o = 4, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = 3; var h = s(r, e, n); if ("normal" === h.type) { if (o = n.done ? 4 : 2, h.arg === f) continue; return { value: h.arg, done: n.done }; } "throw" === h.type && (o = 4, n.method = "throw", n.arg = h.arg); } }; }(r, n, new Context(o || [])), !0), a; } function s(t, r, e) { try { return { type: "normal", arg: t.call(r, e) }; } catch (t) { return { type: "throw", arg: t }; } } r.wrap = h; var f = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var l = {}; c(l, i, function () { return this; }); var p = Object.getPrototypeOf, y = p && p(p(x([]))); y && y !== e && n.call(y, i) && (l = y); var v = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(l); function g(t) { ["next", "throw", "return"].forEach(function (r) { c(t, r, function (t) { return this._invoke(r, t); }); }); } function AsyncIterator(t, r) { function e(o, i, a, u) { var c = s(t[o], t, i); if ("throw" !== c.type) { var h = c.arg, f = h.value; return f && "object" == _typeof(f) && n.call(f, "__await") ? r.resolve(f.__await).then(function (t) { e("next", t, a, u); }, function (t) { e("throw", t, a, u); }) : r.resolve(f).then(function (t) { h.value = t, a(h); }, function (t) { return e("throw", t, a, u); }); } u(c.arg); } var o; c(this, "_invoke", function (t, n) { function i() { return new r(function (r, o) { e(t, n, r, o); }); } return o = o ? o.then(i, i) : i(); }, !0); } function d(r, e) { var n = e.method, o = r.i[n]; if (o === t) return e.delegate = null, "throw" === n && r.i["return"] && (e.method = "return", e.arg = t, d(r, e), "throw" === e.method) || "return" !== n && (e.method = "throw", e.arg = new TypeError("The iterator does not provide a '" + n + "' method")), f; var i = s(o, r.i, e.arg); if ("throw" === i.type) return e.method = "throw", e.arg = i.arg, e.delegate = null, f; var a = i.arg; return a ? a.done ? (e[r.r] = a.value, e.next = r.n, "return" !== e.method && (e.method = "next", e.arg = t), e.delegate = null, f) : a : (e.method = "throw", e.arg = new TypeError("iterator result is not an object"), e.delegate = null, f); } function w(t) { this.tryEntries.push(t); } function m(r) { var e = r[4] || {}; e.type = "normal", e.arg = t, r[4] = e; } function Context(t) { this.tryEntries = [[-1]], t.forEach(w, this), this.reset(!0); } function x(r) { if (null != r) { var e = r[i]; if (e) return e.call(r); if ("function" == typeof r.next) return r; if (!isNaN(r.length)) { var o = -1, a = function e() { for (; ++o < r.length;) if (n.call(r, o)) return e.value = r[o], e.done = !1, e; return e.value = t, e.done = !0, e; }; return a.next = a; } } throw new TypeError(_typeof(r) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, c(v, "constructor", GeneratorFunctionPrototype), c(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = c(GeneratorFunctionPrototype, u, "GeneratorFunction"), r.isGeneratorFunction = function (t) { var r = "function" == typeof t && t.constructor; return !!r && (r === GeneratorFunction || "GeneratorFunction" === (r.displayName || r.name)); }, r.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, c(t, u, "GeneratorFunction")), t.prototype = Object.create(v), t; }, r.awrap = function (t) { return { __await: t }; }, g(AsyncIterator.prototype), c(AsyncIterator.prototype, a, function () { return this; }), r.AsyncIterator = AsyncIterator, r.async = function (t, e, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(h(t, e, n, o), i); return r.isGeneratorFunction(e) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, g(v), c(v, u, "Generator"), c(v, i, function () { return this; }), c(v, "toString", function () { return "[object Generator]"; }), r.keys = function (t) { var r = Object(t), e = []; for (var n in r) e.unshift(n); return function t() { for (; e.length;) if ((n = e.pop()) in r) return t.value = n, t.done = !1, t; return t.done = !0, t; }; }, r.values = x, Context.prototype = { constructor: Context, reset: function reset(r) { if (this.prev = this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(m), !r) for (var e in this) "t" === e.charAt(0) && n.call(this, e) && !isNaN(+e.slice(1)) && (this[e] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0][4]; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(r) { if (this.done) throw r; var e = this; function n(t) { a.type = "throw", a.arg = r, e.next = t; } for (var o = e.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i[4], u = this.prev, c = i[1], h = i[2]; if (-1 === i[0]) return n("end"), !1; if (!c && !h) throw Error("try statement without catch or finally"); if (null != i[0] && i[0] <= u) { if (u < c) return this.method = "next", this.arg = t, n(c), !0; if (u < h) return n(h), !1; } } }, abrupt: function abrupt(t, r) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var n = this.tryEntries[e]; if (n[0] > -1 && n[0] <= this.prev && this.prev < n[2]) { var o = n; break; } } o && ("break" === t || "continue" === t) && o[0] <= r && r <= o[2] && (o = null); var i = o ? o[4] : {}; return i.type = t, i.arg = r, o ? (this.method = "next", this.next = o[2], f) : this.complete(i); }, complete: function complete(t, r) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && r && (this.next = r), f; }, finish: function finish(t) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var e = this.tryEntries[r]; if (e[2] === t) return this.complete(e[4], e[3]), m(e), f; } }, "catch": function _catch(t) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var e = this.tryEntries[r]; if (e[0] === t) { var n = e[4]; if ("throw" === n.type) { var o = n.arg; m(e); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(r, e, n) { return this.delegate = { i: x(r), r: e, n: n }, "next" === this.method && (this.arg = t), f; } }, r; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+var TransactionForm = function TransactionForm(_ref) {
+  var _ref$transaction = _ref.transaction,
+    transaction = _ref$transaction === void 0 ? null : _ref$transaction,
+    onSubmit = _ref.onSubmit,
+    onCancel = _ref.onCancel;
+  var _useTheme = (0,_ui_ThemeContext__WEBPACK_IMPORTED_MODULE_1__.useTheme)(),
+    themeStyles = _useTheme.themeStyles;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      date: '',
+      type: 'lease-payment',
+      property: '',
+      description: '',
+      amount: '',
+      paymentMode: 'bank',
+      status: 'completed',
+      notes: ''
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    formData = _useState2[0],
+    setFormData = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState4 = _slicedToArray(_useState3, 2),
+    errors = _useState4[0],
+    setErrors = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isSubmitting = _useState6[0],
+    setIsSubmitting = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isSuccess = _useState8[0],
+    setIsSuccess = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState0 = _slicedToArray(_useState9, 2),
+    isEditMode = _useState0[0],
+    setIsEditMode = _useState0[1];
+
+  // Sample properties list
+  var properties = ['Al Noor Tower', 'Zamzam View', 'Al Safa Heights', 'Al Masjid Residency'];
+
+  // Initialize form if transaction is provided (edit mode)
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (transaction) {
+      setIsEditMode(true);
+      setFormData({
+        date: transaction.date || '',
+        type: transaction.type || 'lease-payment',
+        property: transaction.property || '',
+        description: transaction.description || '',
+        amount: Math.abs(transaction.amount) || '',
+        paymentMode: transaction.paymentMode || 'bank',
+        status: transaction.status || 'completed',
+        notes: transaction.notes || ''
+      });
+    } else {
+      // Default date to today for new transactions
+      var today = new Date();
+      var formattedDate = today.toISOString().split('T')[0];
+      setFormData(function (prevState) {
+        return _objectSpread(_objectSpread({}, prevState), {}, {
+          date: formattedDate
+        });
+      });
+    }
+  }, [transaction]);
+
+  // Handle form input changes
+  var handleChange = function handleChange(e) {
+    var _e$target = e.target,
+      name = _e$target.name,
+      value = _e$target.value;
+    setFormData(function (prevState) {
+      return _objectSpread(_objectSpread({}, prevState), {}, _defineProperty({}, name, value));
+    });
+
+    // Clear error for field being changed
+    if (errors[name]) {
+      setErrors(function (prevErrors) {
+        return _objectSpread(_objectSpread({}, prevErrors), {}, _defineProperty({}, name, ''));
+      });
+    }
+  };
+
+  // Form validation
+  var validateForm = function validateForm() {
+    var newErrors = {};
+    if (!formData.date) {
+      newErrors.date = 'Date is required';
+    }
+    if (!formData.property) {
+      newErrors.property = 'Property is required';
+    }
+    if (!formData.description) {
+      newErrors.description = 'Description is required';
+    }
+    if (!formData.amount) {
+      newErrors.amount = 'Amount is required';
+    } else if (isNaN(formData.amount) || parseFloat(formData.amount) <= 0) {
+      newErrors.amount = 'Please enter a valid positive amount';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Handle form submission
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
+      var transactionData;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            e.preventDefault();
+            if (validateForm()) {
+              _context.next = 3;
+              break;
+            }
+            return _context.abrupt("return");
+          case 3:
+            setIsSubmitting(true);
+            _context.prev = 4;
+            // Prepare transaction data
+            transactionData = _objectSpread(_objectSpread({}, formData), {}, {
+              amount: parseFloat(formData.amount) * (formData.type === 'lease-payment' || formData.type === 'maintenance' ? -1 : 1),
+              id: isEditMode ? transaction.id : "TRX".concat(Math.floor(1000 + Math.random() * 9000)),
+              // Generate random ID for new transactions
+              date: formData.date
+            }); // In a real app, this would be an API call
+            // await axios.post('/api/transactions', transactionData);
+            // Simulate API delay
+            _context.next = 8;
+            return new Promise(function (resolve) {
+              return setTimeout(resolve, 800);
+            });
+          case 8:
+            setIsSuccess(true);
+
+            // Call the onSubmit callback with the transaction data
+            if (onSubmit) {
+              onSubmit(transactionData);
+            }
+
+            // Reset form after success (for new transaction)
+            if (!isEditMode) {
+              setFormData({
+                date: new Date().toISOString().split('T')[0],
+                type: 'lease-payment',
+                property: '',
+                description: '',
+                amount: '',
+                paymentMode: 'bank',
+                status: 'completed',
+                notes: ''
+              });
+            }
+
+            // Reset success state after a delay
+            setTimeout(function () {
+              setIsSuccess(false);
+            }, 3000);
+            _context.next = 18;
+            break;
+          case 14:
+            _context.prev = 14;
+            _context.t0 = _context["catch"](4);
+            console.error('Error submitting transaction:', _context.t0);
+            setErrors({
+              submit: 'There was an error submitting the transaction. Please try again.'
+            });
+          case 18:
+            _context.prev = 18;
+            setIsSubmitting(false);
+            return _context.finish(18);
+          case 21:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[4, 14, 18, 21]]);
+    }));
+    return function handleSubmit(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-white dark:bg-gray-800 rounded-lg shadow-md"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+    className: "text-xl font-semibold text-gray-900 dark:text-white"
+  }, isEditMode ? 'Edit Transaction' : 'New Transaction'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: onCancel,
+    className: "p-1 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    size: 20
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "px-6 py-4 space-y-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+  }, "Transaction Type*"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "grid grid-cols-1 sm:grid-cols-3 gap-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "flex items-center p-3 rounded-md border ".concat(formData.type === 'lease-payment' ? 'bg-purple-50 dark:bg-purple-900/30 border-purple-300 dark:border-purple-700' : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "radio",
+    name: "type",
+    value: "lease-payment",
+    checked: formData.type === 'lease-payment',
+    onChange: handleChange,
+    className: "h-4 w-4 text-purple-600 dark:text-purple-500"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "ml-2 text-sm text-gray-700 dark:text-gray-300"
+  }, "Lease Payment")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "flex items-center p-3 rounded-md border ".concat(formData.type === 'sublease-received' ? 'bg-green-50 dark:bg-green-900/30 border-green-300 dark:border-green-700' : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "radio",
+    name: "type",
+    value: "sublease-received",
+    checked: formData.type === 'sublease-received',
+    onChange: handleChange,
+    className: "h-4 w-4 text-green-600 dark:text-green-500"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "ml-2 text-sm text-gray-700 dark:text-gray-300"
+  }, "Sublease Revenue")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "flex items-center p-3 rounded-md border ".concat(formData.type === 'maintenance' ? 'bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700' : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "radio",
+    name: "type",
+    value: "maintenance",
+    checked: formData.type === 'maintenance',
+    onChange: handleChange,
+    className: "h-4 w-4 text-red-600 dark:text-red-500"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "ml-2 text-sm text-gray-700 dark:text-gray-300"
+  }, "Expense/Maintenance")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "grid grid-cols-1 md:grid-cols-2 gap-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "date",
+    className: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+  }, "Transaction Date*"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "relative"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    size: 16,
+    className: "text-gray-400"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "date",
+    id: "date",
+    name: "date",
+    value: formData.date,
+    onChange: handleChange,
+    className: "pl-10 block w-full border ".concat(errors.date ? 'border-red-300 dark:border-red-600 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500', " rounded-md shadow-sm py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white")
+  })), errors.date && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "mt-1 text-sm text-red-600 dark:text-red-400"
+  }, errors.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "property",
+    className: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+  }, "Property*"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "relative"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    size: 16,
+    className: "text-gray-400"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    id: "property",
+    name: "property",
+    value: formData.property,
+    onChange: handleChange,
+    className: "pl-10 block w-full border ".concat(errors.property ? 'border-red-300 dark:border-red-600 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500', " rounded-md shadow-sm py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: ""
+  }, "Select a property"), properties.map(function (property) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+      key: property,
+      value: property
+    }, property);
+  }))), errors.property && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "mt-1 text-sm text-red-600 dark:text-red-400"
+  }, errors.property))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "description",
+    className: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+  }, "Description*"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    id: "description",
+    name: "description",
+    value: formData.description,
+    onChange: handleChange,
+    placeholder: "Enter transaction description",
+    className: "block w-full border ".concat(errors.description ? 'border-red-300 dark:border-red-600 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500', " rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white")
+  }), errors.description && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "mt-1 text-sm text-red-600 dark:text-red-400"
+  }, errors.description)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "grid grid-cols-1 md:grid-cols-2 gap-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "amount",
+    className: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+  }, "Amount (\u20B9)*"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "relative"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    size: 16,
+    className: "text-gray-400"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "number",
+    id: "amount",
+    name: "amount",
+    value: formData.amount,
+    onChange: handleChange,
+    placeholder: "0.00",
+    min: "0",
+    step: "0.01",
+    className: "pl-10 block w-full border ".concat(errors.amount ? 'border-red-300 dark:border-red-600 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500', " rounded-md shadow-sm py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white")
+  })), errors.amount && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "mt-1 text-sm text-red-600 dark:text-red-400"
+  }, errors.amount)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "paymentMode",
+    className: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+  }, "Payment Mode"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "relative"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    size: 16,
+    className: "text-gray-400"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    id: "paymentMode",
+    name: "paymentMode",
+    value: formData.paymentMode,
+    onChange: handleChange,
+    className: "pl-10 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "bank"
+  }, "Bank Transfer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "cash"
+  }, "Cash"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+  }, "Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "grid grid-cols-1 sm:grid-cols-2 gap-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "flex items-center p-3 rounded-md border ".concat(formData.status === 'completed' ? 'bg-green-50 dark:bg-green-900/30 border-green-300 dark:border-green-700' : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "radio",
+    name: "status",
+    value: "completed",
+    checked: formData.status === 'completed',
+    onChange: handleChange,
+    className: "h-4 w-4 text-green-600 dark:text-green-500"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "ml-2 text-sm text-gray-700 dark:text-gray-300"
+  }, "Completed")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "flex items-center p-3 rounded-md border ".concat(formData.status === 'pending' ? 'bg-amber-50 dark:bg-amber-900/30 border-amber-300 dark:border-amber-700' : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "radio",
+    name: "status",
+    value: "pending",
+    checked: formData.status === 'pending',
+    onChange: handleChange,
+    className: "h-4 w-4 text-amber-600 dark:text-amber-500"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "ml-2 text-sm text-gray-700 dark:text-gray-300"
+  }, "Pending")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "notes",
+    className: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+  }, "Additional Notes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "relative"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute top-3 left-3 flex items-start pointer-events-none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    size: 16,
+    className: "text-gray-400"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
+    id: "notes",
+    name: "notes",
+    value: formData.notes,
+    onChange: handleChange,
+    rows: 3,
+    className: "pl-10 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500",
+    placeholder: "Enter any additional notes about this transaction"
+  }))), errors.submit && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "p-3 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-md"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "h-5 w-5 text-red-500 mr-2"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-sm text-red-600 dark:text-red-400"
+  }, errors.submit))), isSuccess && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "p-3 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-md"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    className: "h-5 w-5 text-green-500 mr-2"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-sm text-green-600 dark:text-green-400"
+  }, "Transaction ", isEditMode ? 'updated' : 'created', " successfully!")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "px-6 py-4 border-t border-gray-200 dark:border-gray-700 flex justify-end space-x-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "button",
+    onClick: onCancel,
+    className: "px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600",
+    disabled: isSubmitting
+  }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "submit",
+    className: "px-4 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50",
+    disabled: isSubmitting
+  }, isSubmitting ? 'Submitting...' : isEditMode ? 'Update Transaction' : 'Create Transaction'))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TransactionForm);
+
+/***/ }),
+
+/***/ "./src/components/accounts/TransactionModal.jsx":
+/*!******************************************************!*\
+  !*** ./src/components/accounts/TransactionModal.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _TransactionForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TransactionForm */ "./src/components/accounts/TransactionForm.jsx");
+
+
+var TransactionModal = function TransactionModal(_ref) {
+  var isOpen = _ref.isOpen,
+    onClose = _ref.onClose,
+    _ref$transaction = _ref.transaction,
+    transaction = _ref$transaction === void 0 ? null : _ref$transaction,
+    _onSubmit = _ref.onSubmit;
+  // Handle ESC key to close modal
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleEsc = function handleEsc(event) {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    if (isOpen) {
+      document.addEventListener('keydown', handleEsc);
+    }
+    return function () {
+      document.removeEventListener('keydown', handleEsc);
+    };
+  }, [isOpen, onClose]);
+
+  // Prevent scrolling when modal is open
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return function () {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+  if (!isOpen) return null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "fixed inset-0 z-50 overflow-y-auto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75",
+    onClick: onClose,
+    "aria-hidden": "true"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "hidden sm:inline-block sm:align-middle sm:h-screen",
+    "aria-hidden": "true"
+  }, "\u200B"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "inline-block overflow-hidden text-left align-bottom transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full md:max-w-xl"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TransactionForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    transaction: transaction,
+    onSubmit: function onSubmit(data) {
+      _onSubmit(data);
+      onClose();
+    },
+    onCancel: onClose
+  }))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TransactionModal);
 
 /***/ }),
 
@@ -96184,7 +97902,10 @@ var Navbar = function Navbar() {
   }, "Rooms"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "/properties",
     className: "".concat(isActive('/properties') ? 'border-blue-500 text-gray-900 dark:text-white' : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200', " inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium")
-  }, "Properties"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "Properties"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+    to: "/accounts",
+    className: "".concat(isActive('/accounts') ? 'border-blue-500 text-gray-900 dark:text-white' : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200', " inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium")
+  }, "Finances"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: toggleTheme,
@@ -96403,6 +98124,382 @@ var useTheme = function useTheme() {
   }
   return context;
 };
+
+/***/ }),
+
+/***/ "./src/pages/AccountsPage.jsx":
+/*!************************************!*\
+  !*** ./src/pages/AccountsPage.jsx ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_ui_ThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ui/ThemeContext */ "./src/components/ui/ThemeContext.jsx");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/bar-chart-2.mjs");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/download.mjs");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/credit-card.mjs");
+/* harmony import */ var _components_accounts_TransactionModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/accounts/TransactionModal */ "./src/components/accounts/TransactionModal.jsx");
+/* harmony import */ var _components_accounts_FinancialSummary__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/accounts/FinancialSummary */ "./src/components/accounts/FinancialSummary.jsx");
+/* harmony import */ var _components_accounts_RecentTransactions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/accounts/RecentTransactions */ "./src/components/accounts/RecentTransactions.jsx");
+/* harmony import */ var _components_accounts_LeasePaymentsTab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/accounts/LeasePaymentsTab */ "./src/components/accounts/LeasePaymentsTab.jsx");
+/* harmony import */ var _components_accounts_SubleaseRevenueTab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/accounts/SubleaseRevenueTab */ "./src/components/accounts/SubleaseRevenueTab.jsx");
+/* harmony import */ var _components_accounts_AllTransactionsTab__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/accounts/AllTransactionsTab */ "./src/components/accounts/AllTransactionsTab.jsx");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+
+
+
+
+// Main AccountsPage component
+var AccountsPage = function AccountsPage() {
+  var _useTheme = (0,_components_ui_ThemeContext__WEBPACK_IMPORTED_MODULE_1__.useTheme)(),
+    themeStyles = _useTheme.themeStyles;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('overview'),
+    _useState2 = _slicedToArray(_useState, 2),
+    activeTab = _useState2[0],
+    setActiveTab = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all'),
+    _useState4 = _slicedToArray(_useState3, 2),
+    selectedDateRange = _useState4[0],
+    setSelectedDateRange = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all'),
+    _useState6 = _slicedToArray(_useState5, 2),
+    selectedPropertyFilter = _useState6[0],
+    setSelectedPropertyFilter = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all'),
+    _useState8 = _slicedToArray(_useState7, 2),
+    selectedPaymentMode = _useState8[0],
+    setSelectedPaymentMode = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState0 = _slicedToArray(_useState9, 2),
+    searchTerm = _useState0[0],
+    setSearchTerm = _useState0[1];
+
+  // State for transaction modal
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState10 = _slicedToArray(_useState1, 2),
+    isTransactionModalOpen = _useState10[0],
+    setIsTransactionModalOpen = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState12 = _slicedToArray(_useState11, 2),
+    currentTransaction = _useState12[0],
+    setCurrentTransaction = _useState12[1];
+
+  // Handle opening the new transaction modal
+  var handleOpenTransactionModal = function handleOpenTransactionModal() {
+    var transaction = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    setCurrentTransaction(transaction);
+    setIsTransactionModalOpen(true);
+  };
+
+  // Handle closing the transaction modal
+  var handleCloseTransactionModal = function handleCloseTransactionModal() {
+    setIsTransactionModalOpen(false);
+    setCurrentTransaction(null);
+  };
+
+  // Handle submitting a new or edited transaction
+  var handleTransactionSubmit = function handleTransactionSubmit(transactionData) {
+    console.log('Transaction submitted:', transactionData);
+    // In a real app, this would update the state or make an API call
+    // For demo purposes, we'll just log the transaction data
+
+    // Here we would update our transactions array
+    // setTransactions([...transactions, transactionData]);
+  };
+
+  // Mock data for financial summaries
+  var financialSummary = {
+    totalAmount: 4820000,
+    advanceReceived: 3760000,
+    pendingAmount: 1060000,
+    currentMonthRevenue: 580000,
+    leasePayments: {
+      total: 2450000,
+      pending: 650000,
+      paid: 1800000
+    },
+    subleaseRevenue: {
+      total: 2370000,
+      pending: 410000,
+      paid: 1960000
+    }
+  };
+
+  // Mock data for transactions
+  var transactions = [{
+    id: 'TRX001',
+    date: '2025-05-01',
+    type: 'lease-payment',
+    description: 'Monthly Lease Payment to Al Barakat Properties',
+    property: 'Al Noor Tower',
+    amount: 120000,
+    paymentMode: 'bank',
+    status: 'completed'
+  }, {
+    id: 'TRX002',
+    date: '2025-05-03',
+    type: 'sublease-received',
+    description: 'Sublease Payment from Haram Pilgrims',
+    property: 'Al Noor Tower',
+    amount: 85000,
+    paymentMode: 'bank',
+    status: 'completed'
+  }, {
+    id: 'TRX003',
+    date: '2025-05-05',
+    type: 'lease-payment',
+    description: 'Monthly Lease Payment to Zamzam Properties',
+    property: 'Zamzam View',
+    amount: 110000,
+    paymentMode: 'bank',
+    status: 'completed'
+  }, {
+    id: 'TRX004',
+    date: '2025-05-07',
+    type: 'sublease-received',
+    description: 'Sublease Payment from Al Kaaba Tours',
+    property: 'Zamzam View',
+    amount: 65000,
+    paymentMode: 'cash',
+    status: 'completed'
+  }, {
+    id: 'TRX005',
+    date: '2025-05-10',
+    type: 'sublease-received',
+    description: 'Sublease Payment from Madina Travels',
+    property: 'Al Safa Heights',
+    amount: 72000,
+    paymentMode: 'bank',
+    status: 'pending'
+  }, {
+    id: 'TRX006',
+    date: '2025-05-15',
+    type: 'lease-payment',
+    description: 'Monthly Lease Payment to Al Safa Properties',
+    property: 'Al Safa Heights',
+    amount: 95000,
+    paymentMode: 'bank',
+    status: 'pending'
+  }, {
+    id: 'TRX007',
+    date: '2025-05-17',
+    type: 'sublease-received',
+    description: 'Room Booking Payment - Hajj Pilgrims Group A',
+    property: 'Al Noor Tower',
+    amount: 25000,
+    paymentMode: 'cash',
+    status: 'completed'
+  }, {
+    id: 'TRX008',
+    date: '2025-05-20',
+    type: 'maintenance',
+    description: 'Emergency AC Repair in 10 Rooms',
+    property: 'Al Noor Tower',
+    amount: -18000,
+    paymentMode: 'cash',
+    status: 'completed'
+  }, {
+    id: 'TRX009',
+    date: '2025-05-22',
+    type: 'sublease-received',
+    description: 'Advance Booking Payment for Umrah Groups',
+    property: 'Zamzam View',
+    amount: 150000,
+    paymentMode: 'bank',
+    status: 'completed'
+  }, {
+    id: 'TRX010',
+    date: '2025-05-25',
+    type: 'lease-payment',
+    description: 'Additional Fee for Extended Amenities',
+    property: 'Al Noor Tower',
+    amount: 15000,
+    paymentMode: 'bank',
+    status: 'pending'
+  }];
+
+  // Mock data for properties
+  var properties = ['Al Noor Tower', 'Zamzam View', 'Al Safa Heights', 'Al Masjid Residency'];
+
+  // Calculate total transaction amounts by type
+  var calculateTotals = function calculateTotals(transactionList) {
+    return transactionList.reduce(function (totals, transaction) {
+      if (transaction.type === 'lease-payment') {
+        totals.leasePayments += transaction.amount;
+      } else if (transaction.type === 'sublease-received') {
+        totals.subleaseRevenue += transaction.amount;
+      } else if (transaction.type === 'maintenance') {
+        totals.expenses += Math.abs(transaction.amount);
+      }
+      return totals;
+    }, {
+      leasePayments: 0,
+      subleaseRevenue: 0,
+      expenses: 0
+    });
+  };
+
+  // Filter transactions based on search and filters
+  var filteredTransactions = transactions.filter(function (transaction) {
+    var matchesSearch = transaction.description.toLowerCase().includes(searchTerm.toLowerCase()) || transaction.id.toLowerCase().includes(searchTerm.toLowerCase()) || transaction.property.toLowerCase().includes(searchTerm.toLowerCase());
+    var matchesProperty = selectedPropertyFilter === 'all' || transaction.property === selectedPropertyFilter;
+    var matchesPaymentMode = selectedPaymentMode === 'all' || transaction.paymentMode === selectedPaymentMode;
+
+    // Date range filter logic would be implemented here
+    // For now, we'll return true for all date ranges
+    var matchesDateRange = true;
+    return matchesSearch && matchesProperty && matchesPaymentMode && matchesDateRange;
+  });
+
+  // Format currency
+  var formatCurrency = function formatCurrency(amount) {
+    return new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'INR'
+    }).format(amount);
+  };
+
+  // Format date
+  var formatDate = function formatDate(dateString) {
+    var options = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "min-h-screen ".concat(themeStyles.background)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    className: "text-2xl font-bold text-gray-900 dark:text-white"
+  }, "Financial Management"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "text-gray-600 dark:text-gray-300 mt-1"
+  }, "Track and manage property finances")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex mt-4 sm:mt-0 space-x-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 flex items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    size: 16,
+    className: "mr-1"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Reports")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 flex items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    size: 16,
+    className: "mr-1"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Export")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: function onClick() {
+      return handleOpenTransactionModal();
+    },
+    className: "px-3 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 flex items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    size: 16,
+    className: "mr-1"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "New Transaction")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "bg-white dark:bg-gray-800 rounded-lg shadow-sm mb-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex border-b border-gray-200 dark:border-gray-700"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "px-4 py-3 text-sm font-medium ".concat(activeTab === 'overview' ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'),
+    onClick: function onClick() {
+      return setActiveTab('overview');
+    }
+  }, "Financial Overview"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "px-4 py-3 text-sm font-medium ".concat(activeTab === 'lease-payments' ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'),
+    onClick: function onClick() {
+      return setActiveTab('lease-payments');
+    }
+  }, "Lease Payments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "px-4 py-3 text-sm font-medium ".concat(activeTab === 'sublease-revenue' ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'),
+    onClick: function onClick() {
+      return setActiveTab('sublease-revenue');
+    }
+  }, "Sublease Revenue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "px-4 py-3 text-sm font-medium ".concat(activeTab === 'transactions' ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'),
+    onClick: function onClick() {
+      return setActiveTab('transactions');
+    }
+  }, "All Transactions"))), activeTab === 'overview' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "space-y-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_accounts_FinancialSummary__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    financialSummary: financialSummary,
+    formatCurrency: formatCurrency,
+    setActiveTab: setActiveTab
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_accounts_RecentTransactions__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    transactions: transactions,
+    formatDate: formatDate,
+    formatCurrency: formatCurrency,
+    setActiveTab: setActiveTab
+  })), activeTab === 'lease-payments' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_accounts_LeasePaymentsTab__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    financialSummary: financialSummary,
+    formatCurrency: formatCurrency,
+    filteredTransactions: filteredTransactions,
+    formatDate: formatDate,
+    searchTerm: searchTerm,
+    setSearchTerm: setSearchTerm,
+    selectedPropertyFilter: selectedPropertyFilter,
+    setSelectedPropertyFilter: setSelectedPropertyFilter,
+    selectedPaymentMode: selectedPaymentMode,
+    setSelectedPaymentMode: setSelectedPaymentMode,
+    selectedDateRange: selectedDateRange,
+    setSelectedDateRange: setSelectedDateRange,
+    properties: properties
+  }), activeTab === 'sublease-revenue' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_accounts_SubleaseRevenueTab__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    financialSummary: financialSummary,
+    formatCurrency: formatCurrency,
+    filteredTransactions: filteredTransactions,
+    formatDate: formatDate,
+    searchTerm: searchTerm,
+    setSearchTerm: setSearchTerm,
+    selectedPropertyFilter: selectedPropertyFilter,
+    setSelectedPropertyFilter: setSelectedPropertyFilter,
+    selectedPaymentMode: selectedPaymentMode,
+    setSelectedPaymentMode: setSelectedPaymentMode,
+    selectedDateRange: selectedDateRange,
+    setSelectedDateRange: setSelectedDateRange,
+    properties: properties
+  }), activeTab === 'transactions' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_accounts_AllTransactionsTab__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    filteredTransactions: filteredTransactions,
+    calculateTotals: calculateTotals,
+    formatCurrency: formatCurrency,
+    formatDate: formatDate,
+    searchTerm: searchTerm,
+    setSearchTerm: setSearchTerm,
+    selectedPropertyFilter: selectedPropertyFilter,
+    setSelectedPropertyFilter: setSelectedPropertyFilter,
+    selectedPaymentMode: selectedPaymentMode,
+    setSelectedPaymentMode: setSelectedPaymentMode,
+    selectedDateRange: selectedDateRange,
+    setSelectedDateRange: setSelectedDateRange,
+    properties: properties
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_accounts_TransactionModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    isOpen: isTransactionModalOpen,
+    onClose: handleCloseTransactionModal,
+    transaction: currentTransaction,
+    onSubmit: handleTransactionSubmit
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AccountsPage);
 
 /***/ }),
 
@@ -99788,8 +101885,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_BookingCalendar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/BookingCalendar */ "./src/pages/BookingCalendar.jsx");
 /* harmony import */ var _pages_BookingDetails__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/BookingDetails */ "./src/pages/BookingDetails.jsx");
 /* harmony import */ var _pages_BookingForm__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/BookingForm */ "./src/pages/BookingForm.jsx");
-/* harmony import */ var _components_ui_ThemeContext__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/ui/ThemeContext */ "./src/components/ui/ThemeContext.jsx");
-/* harmony import */ var _styles_base_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./styles/base.css */ "./src/styles/base.css");
+/* harmony import */ var _pages_AccountsPage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/AccountsPage */ "./src/pages/AccountsPage.jsx");
+/* harmony import */ var _components_ui_ThemeContext__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/ui/ThemeContext */ "./src/components/ui/ThemeContext.jsx");
+/* harmony import */ var _styles_base_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./styles/base.css */ "./src/styles/base.css");
 // import React from "react";
 // import { createRoot } from "react-dom/client";
 // import { FrappeProvider } from "frappe-react-sdk";
@@ -99932,12 +102030,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 // Function to wrap component with providers
 var wrapWithProviders = function wrapWithProviders(Component) {
   var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(frappe_react_sdk__WEBPACK_IMPORTED_MODULE_2__.FrappeProvider, {
     socketPort: window.socketPort
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_ThemeContext__WEBPACK_IMPORTED_MODULE_12__.ThemeProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Component, props))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_ThemeContext__WEBPACK_IMPORTED_MODULE_13__.ThemeProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Component, props))));
 };
 
 // Get the main container
@@ -99974,7 +102073,7 @@ if (container) {
   }), mountComponentIfElementExists("new-booking-root", _pages_BookingForm__WEBPACK_IMPORTED_MODULE_11__["default"]), mountComponentIfElementExists("edit-booking-root", _pages_BookingForm__WEBPACK_IMPORTED_MODULE_11__["default"], {
     isEdit: true,
     bookingId: window.bookingId
-  })];
+  }), mountComponentIfElementExists("accounts-root", _pages_AccountsPage__WEBPACK_IMPORTED_MODULE_12__["default"])];
 
   // Log error if no component was mounted
   if (!mounted.includes(true)) {

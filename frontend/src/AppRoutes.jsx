@@ -14,6 +14,7 @@ import PropertiesPage from './pages/PropertiesPage';
 import PropertyDetails from './pages/PropertyDetails';
 import BookingDetail from './pages/BookingDetails';
 import BookingForm from './pages/BookingForm';
+import AccountsPage from './pages/AccountsPage';
 import PageNotFound from './pages/PageNotFound';
 
 const AppRoutes = () => {
@@ -47,6 +48,11 @@ const AppRoutes = () => {
           <Route path="/booking-details" element={<BookingDetail />} />
           <Route path="/new-booking" element={<BookingForm />} />
           <Route path="/edit-booking" element={<BookingForm isEdit={true} />} />
+
+          {/* Accounts Routes */}
+          <Route path="/accounts" element={<AccountsPage />} />
+          
+          {/* Redirect to dashboard if no specific path is found */}
           
           {/* Redirect and 404 */}
           <Route path="*" element={<PageNotFound />} />

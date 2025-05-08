@@ -252,6 +252,7 @@ website_route_rules = [
     {"from_route": "/new-booking", "to_route": "hotel_booking/www/new-booking.html"},
     {"from_route": "/edit-booking", "to_route": "hotel_booking/www/edit-booking.html"},
     {"from_route": "/property-details", "to_route": "hotel_booking/www/property-details.html"},
+    {"from_route": "/accounts", "to_route": "hotel_booking/www/accounts.html"},
     # Root redirect
     # {"from_route": "/", "to_route": "hotel_booking/www/dashboard.html"},
 
