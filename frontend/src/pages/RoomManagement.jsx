@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useTheme } from '../components/ui/ThemeContext';
 import { Home, Filter, Plus, Search, Edit, Trash, Check, X } from 'lucide-react';
+import RoomModal from '../components/ui/modals/RoomModal';
 
 const RoomManagement = () => {
   const { themeStyles } = useTheme();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProperty, setSelectedProperty] = useState('all');
   const [selectedStatus, setSelectedStatus] = useState('all');
+  const [showModal, setShowModal] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState(null);
 
   // Mock data for rooms
   const mockRooms = [
@@ -20,11 +23,41 @@ const RoomManagement = () => {
     { id: 8, number: '301', type: 'Suite', property: 'Zamzam View', status: 'available', floor: 3, capacity: 4, rate: 220 },
   ];
 
+  const [rooms, setRooms] = useState(mockRooms);
+
+  // Handler functions for room management
+  const handleAddRoom = () => {
+    setSelectedRoom(null);
+    setShowModal(true);
+  };
+  
+  const handleEditRoom = (room) => {
+    setSelectedRoom(room);
+    setShowModal(true);
+  };
+  
+  const handleSaveRoom = (roomData) => {
+    if (selectedRoom) {
+      // Edit existing room
+      setRooms(rooms.map(room => 
+        room.id === roomData.id ? roomData : room
+      ));
+    } else {
+      // Add new room
+      setRooms([...rooms, roomData]);
+    }
+    setShowModal(false);
+  };
+  
+  const handleDeleteRoom = (roomId) => {
+    setRooms(rooms.filter(room => room.id !== roomId));
+  };
+
   // Mock properties list
   const properties = ['Al Noor Tower', 'Zamzam View'];
   
   // Filter rooms based on search and filters
-  const filteredRooms = mockRooms.filter(room => {
+  const filteredRooms = rooms.filter(room => {
     const matchesSearch = 
       room.number.toLowerCase().includes(searchTerm.toLowerCase()) ||
       room.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -61,7 +94,10 @@ const RoomManagement = () => {
           </div>
           
           <div className="flex mt-4 sm:mt-0 space-x-2">
-            <button className="px-3 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 flex items-center">
+            <button 
+              onClick={handleAddRoom}
+              className="px-3 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700 flex items-center"
+            >
               <Plus size={16} className="mr-1" />
               <span>Add New Room</span>
             </button>
@@ -182,10 +218,16 @@ const RoomManagement = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <div className="flex justify-end space-x-2">
-                        <button className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300">
+                        <button 
+                          onClick={() => handleEditRoom(room)}
+                          className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300"
+                        >
                           <Edit size={18} />
                         </button>
-                        <button className="text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-red-300">
+                        <button 
+                          onClick={() => handleDeleteRoom(room.id)}
+                          className="text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-red-300"
+                        >
                           <Trash size={18} />
                         </button>
                       </div>
@@ -206,7 +248,7 @@ const RoomManagement = () => {
         {/* Pagination */}
         <div className="mt-4 flex justify-between items-center">
           <div className="text-sm text-gray-700 dark:text-gray-300">
-            Showing <span className="font-medium">{filteredRooms.length}</span> out of <span className="font-medium">{mockRooms.length}</span> rooms
+            Showing <span className="font-medium">{filteredRooms.length}</span> out of <span className="font-medium">{rooms.length}</span> rooms
           </div>
           <div className="flex space-x-2">
             <button className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -218,6 +260,16 @@ const RoomManagement = () => {
           </div>
         </div>
       </div>
+
+      {/* Room Modal */}
+      {showModal && (
+        <RoomModal 
+          onClose={() => setShowModal(false)}
+          room={selectedRoom}
+          onSave={handleSaveRoom}
+          onDelete={handleDeleteRoom}
+        />
+      )}
     </div>
   );
 };
