@@ -597,7 +597,7 @@ export const AlertsAndNotificationsTab = ({ mockData }) => {
       </div>
       
       {/* Quick Actions */}
-      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow col-span-2">
+      {/* <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow col-span-2">
         <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Quick Actions</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <button className="flex flex-col items-center justify-center p-4 bg-blue-50 dark:bg-blue-900/30 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800/30 transition">
@@ -628,7 +628,7 @@ export const AlertsAndNotificationsTab = ({ mockData }) => {
             <span className="text-sm font-medium text-gray-700 dark:text-gray-200">Renew Lease</span>
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

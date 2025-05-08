@@ -1,7 +1,9 @@
+// frontend/src/components/ui/Navbar.jsx
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from './ThemeContext';
 import { Menu, X, Sun, Moon, User, LogOut } from 'lucide-react';
+import QuickActions from './QuickActions';
 
 const Navbar = () => {
   const { useLightTheme, toggleTheme, themeStyles } = useTheme();
@@ -28,7 +30,7 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link
-                to="/"
+                to="/dashboard"
                 className={`${isActive('/') || isActive('/dashboard') 
                   ? 'border-blue-500 text-gray-900 dark:text-white' 
                   : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
@@ -75,12 +77,16 @@ const Navbar = () => {
             </div>
           </div>
           
-          {/* User account and theme toggle */}
+          {/* User account, Quick Actions and theme toggle */}
           <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
+            {/* Quick Actions Button */}
+            <QuickActions />
+            
             {/* Theme toggle button */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+              aria-label="Toggle theme"
             >
               {useLightTheme ? <Moon size={20} /> : <Sun size={20} />}
             </button>
@@ -98,9 +104,15 @@ const Navbar = () => {
           
           {/* Mobile menu button */}
           <div className="flex items-center sm:hidden">
+            {/* Mobile Quick Actions */}
+            <div className="mr-2">
+              <QuickActions />
+            </div>
+            
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -118,6 +130,7 @@ const Navbar = () => {
                 ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
                 : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
               } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
+              onClick={() => setIsMenuOpen(false)}
             >
               Dashboard
             </Link>
@@ -127,6 +140,7 @@ const Navbar = () => {
                 ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
                 : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
               } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
+              onClick={() => setIsMenuOpen(false)}
             >
               Bookings
             </Link>
@@ -136,6 +150,7 @@ const Navbar = () => {
                 ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
                 : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
               } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
+              onClick={() => setIsMenuOpen(false)}
             >
               Rooms
             </Link>
@@ -145,8 +160,19 @@ const Navbar = () => {
                 ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
                 : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
               } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
+              onClick={() => setIsMenuOpen(false)}
             >
               Properties
+            </Link>
+            <Link
+              to="/accounts"
+              className={`${isActive('/accounts') 
+                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+              } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Finances
             </Link>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
@@ -171,18 +197,21 @@ const Navbar = () => {
               <Link
                 to="/profile"
                 className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Your Profile
               </Link>
               <Link
                 to="/settings"
                 className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Settings
               </Link>
               <Link
                 to="/logout"
                 className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Sign out
               </Link>
