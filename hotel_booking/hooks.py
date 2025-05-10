@@ -240,27 +240,57 @@ app_license = "mit"
 # application home page (will override Website Settings)
 home_page = "dashboard"
 
-# Routes
+# # Routes
+# website_route_rules = [
+#     # Main routes without trailing slash
+#     {"from_route": "/dashboard", "to_route": "hotel_booking/www/dashboard.html"},
+#     {"from_route": "/properties", "to_route": "hotel_booking/www/properties.html"},
+#     {"from_route": "/rooms", "to_route": "hotel_booking/www/rooms.html"},
+#     {"from_route": "/bookings", "to_route": "hotel_booking/www/bookings.html"},
+#     {"from_route": "/booking-calendar", "to_route": "hotel_booking/www/booking-calendar.html"},
+#     {"from_route": "/booking-details", "to_route": "hotel_booking/www/booking-details.html"},
+#     {"from_route": "/new-booking", "to_route": "hotel_booking/www/new-booking.html"},
+#     {"from_route": "/edit-booking", "to_route": "hotel_booking/www/edit-booking.html"},
+#     {"from_route": "/property-details", "to_route": "hotel_booking/www/property-details.html"},
+#     {"from_route": "/accounts", "to_route": "hotel_booking/www/accounts.html"},
+#     # Root redirect
+#     # {"from_route": "/", "to_route": "hotel_booking/www/dashboard.html"},
+
+#   ]
+# # Include your React app's CSS and JS in the header of web templates
+
+# web_include_css = "/assets/hotel_booking/css/react-style.css"
+# web_include_js = "/assets/hotel_booking/js/react/bundle.js"
+
+# # Add this to hooks.py
+# page_404 = "hotel_booking/www/404.html"
+
+# Routes configuration
 website_route_rules = [
-    # Main routes without trailing slash
+    # Main routes
     {"from_route": "/dashboard", "to_route": "hotel_booking/www/dashboard.html"},
     {"from_route": "/properties", "to_route": "hotel_booking/www/properties.html"},
+    {"from_route": "/property-details", "to_route": "hotel_booking/www/property-details.html"},
+    {"from_route": "/add-property", "to_route": "hotel_booking/www/property-details.html"},
     {"from_route": "/rooms", "to_route": "hotel_booking/www/rooms.html"},
     {"from_route": "/bookings", "to_route": "hotel_booking/www/bookings.html"},
     {"from_route": "/booking-calendar", "to_route": "hotel_booking/www/booking-calendar.html"},
     {"from_route": "/booking-details", "to_route": "hotel_booking/www/booking-details.html"},
     {"from_route": "/new-booking", "to_route": "hotel_booking/www/new-booking.html"},
     {"from_route": "/edit-booking", "to_route": "hotel_booking/www/edit-booking.html"},
-    {"from_route": "/property-details", "to_route": "hotel_booking/www/property-details.html"},
     {"from_route": "/accounts", "to_route": "hotel_booking/www/accounts.html"},
+    
     # Root redirect
-    # {"from_route": "/", "to_route": "hotel_booking/www/dashboard.html"},
+    {"from_route": "/", "to_route": "hotel_booking/www/dashboard.html"},
+    
+    # Also add these for improved compatibility
+    {"from_route": "/*", "to_route": "hotel_booking/www/dashboard.html"},
+]
 
-  ]
 # Include your React app's CSS and JS in the header of web templates
-
 web_include_css = "/assets/hotel_booking/css/react-style.css"
 web_include_js = "/assets/hotel_booking/js/react/bundle.js"
 
-# Add this to hooks.py
+# Custom 404 page
 page_404 = "hotel_booking/www/404.html"
+

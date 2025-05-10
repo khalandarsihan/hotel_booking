@@ -9,10 +9,10 @@
 		<title>{{ title or "Hotel Booking Management System" }}</title>
 
 		<!-- Favicon -->
-		<link rel="icon" href="/assets/hotel_booking/images/favicon.ico" type="image/x-icon" />
+		<!-- <link rel="icon" href="/assets/hotel_booking/images/favicon.ico" type="image/x-icon" /> -->
 
 		<!-- Frappe CSS -->
-		<link rel="stylesheet" href="/assets/frappe/css/frappe-web.min.css" />
+		<!-- <link rel="stylesheet" href="/assets/frappe/css/frappe-web.min.css" /> -->
 
 		<!-- React CSS -->
 		<link rel="stylesheet" href="/assets/hotel_booking/css/react-style.css" />
@@ -29,7 +29,7 @@
 
 		<!-- Frappe JS -->
 		<script src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
-		<script src="/assets/js/frappe-web.min.js"></script>
+		<!-- <script src="/assets/js/frappe-web.min.js"></script> -->
 
 		{% block head_include %}{% endblock %} {% block style %}{% endblock %}
 	</head>
@@ -37,7 +37,7 @@
 		<!-- Main React App Container -->
 		<div id="hotel-booking-root">
 			<!-- This is where the React app will render -->
-			<!-- If React doesn't load properly, show a message -->
+			<!-- Loading spinner -->
 			<div
 				id="loading-placeholder"
 				style="
@@ -71,8 +71,21 @@
 			</div>
 		</div>
 
-		<!-- Page-specific containers (used in individual page templates) -->
-		{% block content %}{% endblock %}
+		<!-- Support specific root containers for individual pages -->
+		<!-- These are needed if React fails to load or for non-SPA pages -->
+		<div id="dashboard-root"></div>
+		<div id="bookings-root"></div>
+		<div id="room-management-root"></div>
+		<div id="properties-root"></div>
+		<div id="property-details-root"></div>
+		<div id="booking-calendar-root"></div>
+		<div id="booking-details-root"></div>
+		<div id="new-booking-root"></div>
+		<div id="edit-booking-root"></div>
+		<div id="accounts-root"></div>
+
+		<!-- Additional container for page-specific content from Frappe -->
+		<div id="frappe-page-content" style="display: none">{% block content %}{% endblock %}</div>
 
 		<!-- Common Variables for React -->
 		<script>
@@ -81,6 +94,39 @@
 			window.frappe = window.frappe || {};
 			window.frappe.csrf_token = "{{ frappe.session.csrf_token }}";
 			window.currentPath = "{{ path or '' }}";
+
+			// Make sure Frappe doesn't redirect SPA navigation
+			window.frappe.no_route_change = true;
+
+			// Expose Frappe's current user to React
+			window.currentUser = "{{ frappe.session.user }}";
+
+			// Handle any URL parameters
+			const urlParams = new URLSearchParams(window.location.search);
+
+			// Pass any ID parameter to React
+			const id = urlParams.get("id");
+			if (id) {
+				window.itemId = id;
+
+				// Set specific IDs based on the current page
+				if (window.location.pathname.includes("property-details")) {
+					window.propertyId = id;
+				} else if (
+					window.location.pathname.includes("booking-details") ||
+					window.location.pathname.includes("edit-booking")
+				) {
+					window.bookingId = id;
+				}
+			}
+
+			// Expose the current page path to React
+			window.appPath = window.location.pathname.replace(/^\/+|\/+$/g, "");
+
+			// Detect if this is an edit page
+			if (window.location.pathname.includes("edit-")) {
+				window.isEditMode = true;
+			}
 		</script>
 
 		<!-- React Bundle JS -->
@@ -91,9 +137,44 @@
 
 		<!-- Error Handler -->
 		<script>
+			// Better error handling for React
 			window.addEventListener("error", function (e) {
 				console.error("Application Error:", e.error);
-				// Add error handling
+
+				// Get the error details
+				const errorMsg = e.error ? e.error.message || "Unknown error" : "Unknown error";
+				const errorStack = e.error ? e.error.stack || "" : "";
+
+				// If React fails to load, display a helpful message
+				if (document.getElementById("loading-placeholder")) {
+					document.getElementById("loading-placeholder").innerHTML = `
+						<div style="color: #e53e3e; text-align: center; max-width: 500px; padding: 20px;">
+							<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 16px;">
+								<circle cx="12" cy="12" r="10"></circle>
+								<line x1="12" y1="8" x2="12" y2="12"></line>
+								<line x1="12" y1="16" x2="12.01" y2="16"></line>
+							</svg>
+							<h2 style="font-size: 1.5rem; margin-bottom: 8px;">Application Error</h2>
+							<p style="margin-bottom: 16px;">${errorMsg}</p>
+							<div style="background: rgba(0,0,0,0.05); padding: 12px; border-radius: 4px; text-align: left; font-family: monospace; font-size: 12px; white-space: pre-wrap; max-height: 200px; overflow: auto;">
+								${errorStack}
+							</div>
+							<p style="margin-top: 16px; font-size: 14px;">
+								Please check your browser console for more details or refresh the page.
+							</p>
+						</div>
+					`;
+				}
+			});
+
+			// Remove loading placeholder once React has mounted
+			document.addEventListener("DOMContentLoaded", function () {
+				setTimeout(function () {
+					const loadingElement = document.getElementById("loading-placeholder");
+					if (loadingElement && loadingElement.parentNode) {
+						loadingElement.style.display = "none";
+					}
+				}, 5000); // After 5 seconds, hide loading placeholder regardless
 			});
 		</script>
 	</body>
