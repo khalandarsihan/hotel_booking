@@ -148,8 +148,8 @@ export const LeaseManagementTab = ({ mockData }) => {
             <Tooltip />
             <Legend />
             <Bar dataKey="rooms" name="Total Rooms" fill="#94a3b8" />
-            <Bar dataKey="leased" name="Leased" fill="#3b82f6" />
-            <Bar dataKey="subLeased" name="Sub-Leased" fill="#8b5cf6" />
+            <Bar dataKey="leased" name="Sub-Leased" fill="#3b82f6" />
+            <Bar dataKey="subLeased" name="Direct Management" fill="#8b5cf6" />
           </BarChart>
         </ResponsiveContainer>
       </div>

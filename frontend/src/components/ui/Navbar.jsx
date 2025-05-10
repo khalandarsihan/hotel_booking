@@ -16,14 +16,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-sm">
+    <nav className={`${themeStyles.navbar} shadow-sm`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo and main navigation */}
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="flex items-center">
-                <span className="text-blue-600 dark:text-blue-400 font-semibold text-xl">HotelBooking</span>
+                <span className={`text-amber-600 dark:text-amber-400 font-semibold text-xl`}>HotelBooking</span>
               </Link>
             </div>
             
@@ -32,7 +32,7 @@ const Navbar = () => {
               <Link
                 to="/dashboard"
                 className={`${isActive('/') || isActive('/dashboard') 
-                  ? 'border-blue-500 text-gray-900 dark:text-white' 
+                  ? 'border-amber-500 text-gray-900 dark:text-white' 
                   : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
                 } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
@@ -41,7 +41,7 @@ const Navbar = () => {
               <Link
                 to="/bookings"
                 className={`${isActive('/bookings') 
-                  ? 'border-blue-500 text-gray-900 dark:text-white' 
+                  ? 'border-amber-500 text-gray-900 dark:text-white' 
                   : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
                 } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
@@ -50,7 +50,7 @@ const Navbar = () => {
               <Link
                 to="/rooms"
                 className={`${isActive('/rooms') 
-                  ? 'border-blue-500 text-gray-900 dark:text-white' 
+                  ? 'border-amber-500 text-gray-900 dark:text-white' 
                   : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
                 } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
@@ -59,7 +59,7 @@ const Navbar = () => {
               <Link
                 to="/properties"
                 className={`${isActive('/properties') 
-                  ? 'border-blue-500 text-gray-900 dark:text-white' 
+                  ? 'border-amber-500 text-gray-900 dark:text-white' 
                   : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
                 } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
@@ -68,7 +68,7 @@ const Navbar = () => {
               <Link
                 to="/accounts"
                 className={`${isActive('/accounts') 
-                  ? 'border-blue-500 text-gray-900 dark:text-white' 
+                  ? 'border-amber-500 text-gray-900 dark:text-white' 
                   : 'border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-gray-200'
                 } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
@@ -85,7 +85,7 @@ const Navbar = () => {
             {/* Theme toggle button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="p-2 rounded-full text-gray-500 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-slate-700"
               aria-label="Toggle theme"
             >
               {useLightTheme ? <Moon size={20} /> : <Sun size={20} />}
@@ -94,7 +94,7 @@ const Navbar = () => {
             {/* User menu */}
             <div className="relative">
               <button 
-                className="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 items-center text-gray-700 dark:text-gray-200"
+                className="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 items-center text-gray-700 dark:text-gray-200"
               >
                 <User size={20} className="mr-1" />
                 <span>Admin</span>
@@ -111,7 +111,7 @@ const Navbar = () => {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none"
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -127,8 +127,8 @@ const Navbar = () => {
             <Link
               to="/"
               className={`${isActive('/') || isActive('/dashboard') 
-                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
-                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                ? 'bg-amber-50 dark:bg-slate-700 border-amber-500 dark:border-amber-400 text-amber-700 dark:text-amber-300' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 hover:border-gray-300 dark:hover:border-amber-800'
               } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -137,8 +137,8 @@ const Navbar = () => {
             <Link
               to="/bookings"
               className={`${isActive('/bookings') 
-                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
-                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                ? 'bg-amber-50 dark:bg-gray-600 border-amber-500 dark:border-amber-400 text-amber-700 dark:text-white' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-600'
               } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -147,8 +147,8 @@ const Navbar = () => {
             <Link
               to="/rooms"
               className={`${isActive('/rooms') 
-                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
-                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                ? 'bg-amber-50 dark:bg-gray-600 border-amber-500 dark:border-amber-400 text-amber-700 dark:text-white' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-600'
               } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -157,8 +157,8 @@ const Navbar = () => {
             <Link
               to="/properties"
               className={`${isActive('/properties') 
-                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
-                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                ? 'bg-amber-50 dark:bg-gray-600 border-amber-500 dark:border-amber-400 text-amber-700 dark:text-white' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-600'
               } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -167,19 +167,19 @@ const Navbar = () => {
             <Link
               to="/accounts"
               className={`${isActive('/accounts') 
-                ? 'bg-blue-50 dark:bg-gray-700 border-blue-500 dark:border-blue-400 text-blue-700 dark:text-white' 
-                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                ? 'bg-amber-50 dark:bg-gray-600 border-amber-500 dark:border-amber-400 text-amber-700 dark:text-white' 
+                : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-600'
               } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
               onClick={() => setIsMenuOpen(false)}
             >
               Finances
             </Link>
           </div>
-          <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
+          <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-600">
             <div className="flex items-center px-4">
               <div className="flex-shrink-0">
-                <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                  <User className="h-6 w-6 text-gray-600 dark:text-gray-300" />
+                <div className="h-10 w-10 rounded-full bg-amber-100 dark:bg-amber-900 flex items-center justify-center">
+                  <User className="h-6 w-6 text-amber-600 dark:text-amber-300" />
                 </div>
               </div>
               <div className="ml-3">
@@ -188,7 +188,7 @@ const Navbar = () => {
               </div>
               <button 
                 onClick={toggleTheme}
-                className="ml-auto p-2 rounded-full text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="ml-auto p-2 rounded-full text-gray-500 dark:text-gray-300 hover:bg-amber-100 dark:hover:bg-gray-600"
               >
                 {useLightTheme ? <Moon size={20} /> : <Sun size={20} />}
               </button>
@@ -196,21 +196,21 @@ const Navbar = () => {
             <div className="mt-3 space-y-1">
               <Link
                 to="/profile"
-                className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-amber-300 hover:bg-gray-100 dark:hover:bg-slate-700"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Your Profile
               </Link>
               <Link
                 to="/settings"
-                className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-600"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Settings
               </Link>
               <Link
                 to="/logout"
-                className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="block px-4 py-2 text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-600"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign out

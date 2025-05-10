@@ -19,53 +19,59 @@ export const ThemeProvider = ({ children }) => {
     }
   });
 
-  // Theme-based styles
+  // Theme-based styles with hospitality-friendly colors
   const themeStyles = useLightTheme ? {
-    background: "bg-gray-50",
+    // Light theme - warm, inviting colors
+    background: "bg-amber-50",
     text: {
       primary: "text-gray-800",
       secondary: "text-gray-700", 
       light: "text-gray-600"
     },
-    heading: "text-blue-800",
-    subheading: "text-blue-700",
+    heading: "text-amber-800",
+    subheading: "text-amber-700",
     card: {
       bg: "bg-white",
-      border: "border-gray-200",
-      hoverBorder: "hover:border-blue-400"
+      border: "border-amber-200",
+      hoverBorder: "hover:border-amber-400"
     },
     cta: {
-      bg: "bg-blue-600",
-      hover: "hover:bg-blue-500"
+      bg: "bg-amber-600",
+      hover: "hover:bg-amber-500"
     },
     accent: {
-      light: "bg-blue-50",
-      medium: "bg-blue-100",
-      strong: "bg-blue-200"
-    }
+      light: "bg-amber-50",
+      medium: "bg-amber-100",
+      strong: "bg-amber-200"
+    },
+    navbar: "bg-white",
+    footer: "bg-white"
   } : {
-    background: "bg-gray-900",
+    // Dark theme - luxurious, upscale hotel atmosphere (significantly changed)
+    background: "bg-slate-900",
     text: {
-      primary: "text-gray-200",
-      secondary: "text-gray-300", 
-      light: "text-gray-400"
+      primary: "text-gray-100",
+      secondary: "text-gray-200", 
+      light: "text-gray-300"
     },
-    heading: "text-blue-300",
-    subheading: "text-blue-200",
+    heading: "text-amber-300",
+    subheading: "text-amber-200",
     card: {
-      bg: "bg-gray-800",
-      border: "border-gray-700",
-      hoverBorder: "hover:border-blue-300"
+      bg: "bg-slate-800",
+      border: "border-amber-900",
+      hoverBorder: "hover:border-amber-400"
     },
     cta: {
-      bg: "bg-blue-600",
-      hover: "hover:bg-blue-500"
+      bg: "bg-amber-600",
+      hover: "hover:bg-amber-500"
     },
     accent: {
-      light: "bg-blue-900/30",
-      medium: "bg-blue-800/40",
-      strong: "bg-blue-700/50"
-    }
+      light: "bg-amber-900/40",
+      medium: "bg-amber-800/60",
+      strong: "bg-amber-700/80"
+    },
+    navbar: "bg-slate-800",
+    footer: "bg-slate-800"
   };
 
   // Toggle theme function

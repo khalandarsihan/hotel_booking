@@ -13,8 +13,8 @@ const Dashboard = () => {
   const mockData = {  
     occupancyRate: 76,  
     totalRooms: 230,  
-    availableRooms: 55,  
-    leasedRooms: 175,  
+    availableRooms: 70,  
+    leasedRooms: 245,  
     subLeasedRooms: 98,  
     directlyManaged: 77,  
     upcomingCheckIns: 12,  
@@ -91,24 +91,29 @@ const Dashboard = () => {
   return (  
     <div className={`min-h-screen ${themeStyles.background}`}>  
       {/* Header */}  
-      <header className="bg-white dark:bg-gray-800 shadow-md">  
-        <div className="mx-auto px-4 py-6 flex justify-between items-center">  
-          <div>  
-            <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Mecca Pilgrim Accommodation Manager</h1>  
-            <p className="text-gray-500 dark:text-gray-400 text-sm">Dashboard for Al Barakat Hotel Group</p>  
-          </div>  
-          <div className="flex items-center gap-4">  
-            <div className="bg-emerald-100 dark:bg-emerald-900/30 px-3 py-1 rounded-full text-emerald-700 dark:text-emerald-300 text-sm font-medium flex items-center">  
-              <CalendarDays className="w-4 h-4 mr-1" />  
-              {formattedDate}
-            </div>  
-            <div className="flex items-center gap-2 text-sm">  
-              <span className="font-medium text-gray-700 dark:text-gray-300">Hajj Season:</span>  
-              <span className="text-amber-600 dark:text-amber-400 font-medium">128 Days Away</span>  
-            </div>  
-          </div>  
-        </div>  
-      </header>  
+
+<header className="bg-amber-50 dark:bg-slate-800 shadow-md">  
+  <div className="mx-auto px-4 py-6 flex justify-between items-center">  
+    <div>  
+      <h1 className="text-2xl font-bold text-amber-700 dark:text-amber-300">
+        Mecca Pilgrim Accommodation Manager
+      </h1>  
+      <p className="text-emerald-600 dark:text-emerald-400 text-sm">
+        Dashboard for Al Barakat Hotel Group
+      </p>  
+    </div>  
+    <div className="flex items-center gap-4">  
+      <div className="bg-emerald-100 dark:bg-emerald-900/30 px-3 py-1 rounded-full text-emerald-700 dark:text-emerald-300 text-sm font-medium flex items-center">  
+        <CalendarDays className="w-4 h-4 mr-1" />  
+        {formattedDate}
+      </div>  
+      <div className="flex items-center gap-2 text-sm">  
+        <span className="font-medium text-gray-700 dark:text-gray-300">Hajj Season:</span>  
+        <span className="text-amber-600 dark:text-amber-400 font-medium">128 Days Away</span>  
+      </div>  
+    </div>  
+  </div>  
+</header>
         
       {/* Main Content */}  
       <main className="max-w-7xl mx-auto py-6 px-4">  
